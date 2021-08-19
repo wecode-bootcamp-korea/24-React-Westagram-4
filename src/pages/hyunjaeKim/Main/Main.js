@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Aside from "./Aside/Aside";
+import Replies from "./Replies/Replies";
 import "./Main.scss";
 
 class MainHyunJae extends Component {
@@ -165,38 +166,7 @@ class MainHyunJae extends Component {
                       <a href="#" className="moreLink">
                         View all 9 comments
                       </a>
-                      <ul className="replies">
-                        <li className="reply">
-                          <div className="replyDetail">
-                            <strong>
-                              <a href="#" className="userID">
-                                chillin1980
-                              </a>
-                            </strong>
-                            <a href="#" className="comment hashtag">
-                              @jis20da
-                            </a>
-                          </div>
-                          <div className="icon heartBtn small_icon">
-                            <i className="far fa-heart"></i>
-                          </div>
-                        </li>
-                        <li className="reply">
-                          <div className="replyDetail">
-                            <strong>
-                              <a href="#" className="userID">
-                                gumbong2
-                              </a>
-                            </strong>
-                            <a href="#" className="comment hashtag">
-                              @funky1o.ve
-                            </a>
-                          </div>
-                          <div className="icon heartBtn small_icon">
-                            <i className="far fa-heart"></i>
-                          </div>
-                        </li>
-                      </ul>
+                      <Replies className="replies" />
                     </div>
                     <div className="pastDay">2 HOURS AGO</div>
                   </div>

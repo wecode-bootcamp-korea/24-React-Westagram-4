@@ -5,17 +5,24 @@ import "./Login.scss";
 class LoginHyunJae extends Component {
   state = {
     id: "",
-    pw: "",
+    pw: 0,
+    isActive: false,
   };
 
   handleIDInput = e => {
     const id = e.target.value;
-    this.setState({ id });
+    this.setState({
+      id: id,
+      isActive: id.includes("@") && this.state.pw.length > 4 ? true : false,
+    });
   };
 
   handlePWInput = e => {
     const pw = e.target.value;
-    this.setState({ pw });
+    this.setState({
+      pw: pw,
+      isActive: this.state.id.includes("@") && pw.length > 4 ? true : false,
+    });
   };
 
   render() {
@@ -40,7 +47,11 @@ class LoginHyunJae extends Component {
             onChange={this.handlePWInput}
           />
           <Link to="/main-jae">
-            <button type="button" className="loginBtn" aria-label="login">
+            <button
+              type="button"
+              className={this.state.isActive ? "loginBtn active" : "loginBtn"}
+              aria-label="login"
+            >
               로그인
             </button>
           </Link>

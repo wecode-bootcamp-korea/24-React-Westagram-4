@@ -7,7 +7,7 @@
   background-color: #c0dffd;
   border-radius: 4px;
 
-  .active {
+  &.active {
     background-color: #0095f6;
     cursor: pointer;
     font-weight: bold;

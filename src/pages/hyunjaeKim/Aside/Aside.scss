@@ -1,1 +1,84 @@
-// aside
+/* profile */
+.profileChange {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.myProfile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 18px 0 22px 0;
+
+  .profileImg {
+    margin-right: 12px;
+  }
+}
+
+/* suggests */
+.suggestTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .userID {
+    margin-right: 6px;
+  }
+}
+
+.suggestedProfiles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.suggestedProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+
+  .userID {
+    margin-bottom: 4px;
+  }
+}
+
+.otherProfile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .profileWrapper {
+    margin-left: 12px;
+  }
+}
+
+.suggestProfileDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+/* service details */
+.serviceDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceLinks {
+  margin-bottom: 15px;
+}
+
+.serviceLink li {
+  float: left;
+
+  &::after {
+    content: "\00B7";
+    margin: 0 0.25em;
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+}

@@ -1,0 +1,50 @@
+/* reaction tool */
+.reactionTool {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 4px;
+}
+
+.giveReaction {
+  display: flex;
+  justify-content: space-between;
+
+  .icon {
+    margin-right: 16px;
+  }
+}
+
+/* likes */
+.likes {
+  margin-bottom: 8px;
+}
+
+/* writter comment */
+.writterComment {
+  margin-bottom: 4px;
+}
+
+/* user comment */
+.userComments .moreLink {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.reply {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0094f6;
+    opacity: 0.4;
+  }
+}
+
+.pastDay {
+  margin-bottom: 4px;
+}

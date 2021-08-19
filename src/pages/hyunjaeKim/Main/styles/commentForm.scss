@@ -1,0 +1,25 @@
+/* comment container */
+.commentForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  padding: 0 16px;
+
+  .icon {
+    padding-right: 16px;
+    margin-right: 16px;
+  }
+}
+
+.commentInput {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(142, 142, 142);
+  }
+}

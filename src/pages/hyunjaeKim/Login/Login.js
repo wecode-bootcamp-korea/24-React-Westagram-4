@@ -3,6 +3,21 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 
 class LoginHyunJae extends Component {
+  state = {
+    id: "",
+    pw: "",
+  };
+
+  handleIDInput = e => {
+    const id = e.target.value;
+    this.setState({ id });
+  };
+
+  handlePWInput = e => {
+    const pw = e.target.value;
+    this.setState({ pw });
+  };
+
   render() {
     return (
       <div className="loginContainer">
@@ -15,12 +30,14 @@ class LoginHyunJae extends Component {
             className="userID"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             aria-label="Write account ID"
+            onChange={this.handleIDInput}
           />
           <input
             type="password"
             className="userPW"
             placeholder="비밀번호"
             aria-label="Write accout password"
+            onChange={this.handlePWInput}
           />
           <Link to="/main-jae">
             <button type="button" className="loginBtn" aria-label="login">

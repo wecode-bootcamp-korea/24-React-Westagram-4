@@ -5,7 +5,7 @@ import "../../../styles/common.scss";
 
 class Login extends React.Component {
   goToMain = () => {
-    this.props.history.push("/main-soo");
+    this.props.history.push("/main");
   };
 
   render() {

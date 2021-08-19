@@ -1,1 +1,142 @@
-// aside
+/* main-right */
+.Aside {
+  position: relative;
+  width: 300px;
+  margin: 50px 0 0 30px;
+  .my-profile {
+    display: flex;
+    margin-bottom: 15px;
+    img {
+      width: 60px;
+      margin-right: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .my-description {
+      margin: auto 0;
+      font-size: 14px;
+      .profile-name {
+        margin-bottom: 3px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .profile-description {
+        color: var(--color-light-gray);
+      }
+    }
+  }
+  .stories {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-dark-white);
+    border-radius: 3px;
+    padding: 15px;
+    .story-title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      span {
+        font-weight: 700;
+        &:first-child {
+          color: var(--color-light-gray);
+        }
+        &:last-child {
+          cursor: pointer;
+        }
+      }
+    }
+    .story-update {
+      li {
+        display: flex;
+        margin-top: 10px;
+      }
+      img {
+        width: 48px;
+        border-radius: 50%;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .story-namebox {
+        font-size: 14px;
+        margin: auto 0;
+        .story-username {
+          font-weight: 700;
+          cursor: pointer;
+        }
+        .story-time {
+          margin-top: 3px;
+          color: var(--color-light-gray);
+        }
+      }
+    }
+  }
+  .recomms {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-dark-white);
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 15px;
+    .recomm-title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      span {
+        font-weight: 700;
+        &:first-child {
+          color: var(--color-light-gray);
+        }
+        &:last-child {
+          cursor: pointer;
+        }
+      }
+    }
+    .recomm-list {
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        img {
+          width: 48px;
+          margin-right: 10px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .recomm-namebox {
+          width: 170px;
+          margin: auto 0;
+          font-size: 14px;
+          .recomm-username {
+            font-weight: 700;
+            cursor: pointer;
+          }
+          .recomm-others {
+            margin-top: 3px;
+            color: var(--color-light-gray);
+          }
+        }
+        .recomm-follow {
+          font-size: 14px;
+          color: var(--color-blue);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .westa-info {
+    margin: 10px 0 10px 0;
+    p {
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--color-dark-white);
+      cursor: pointer;
+    }
+  }
+  .westa-year {
+    p {
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--color-dark-white);
+      cursor: pointer;
+    }
+  }
+}

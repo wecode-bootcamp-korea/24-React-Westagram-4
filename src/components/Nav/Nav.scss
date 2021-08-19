@@ -1,1 +1,139 @@
-// Nav.scssß
+.Nav {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 67px;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 4;
+
+  .instagram-logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 240px;
+    font-size: 22px;
+
+    .instagram-icon {
+      border-left: 2px solid #262626;
+      padding-left: 12px;
+      margin-left: 13px;
+      font-family: Lobster;
+    }
+  }
+  .search {
+    > input {
+      width: 200px;
+      height: 22px;
+      border: 1.7px solid #dbdbdb;
+      border-radius: 2px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+
+    > input:focus {
+      width: 180px;
+      padding-left: 22px;
+      color: #262626;
+      text-align: left;
+    }
+
+    .search-all {
+      position: absolute;
+      top: 65px;
+      left: 50%;
+      transform: translate(-50%);
+      background-color: #fff;
+      box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+      border: 1px solid #fff;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    .search-engine {
+      position: relative;
+      width: 340px;
+      height: 380px;
+      background-color: #fff;
+      z-index: 9;
+      overflow: auto;
+
+      .search-squre {
+        position: absolute;
+        top: -7px;
+        left: 175px;
+        width: 16px;
+        height: 16px;
+        transform: rotate(45deg);
+        box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+        background-color: #fff;
+        z-index: 8;
+      }
+
+      .search-contents {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 10px;
+
+        &:first-child {
+          padding-top: 10px;
+        }
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+
+        .gradient {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 52px;
+          height: 52px;
+          border-radius: 100%;
+          background: radial-gradient(
+            circle at bottom left,
+            #f58529 20%,
+            #c42d91
+          );
+        }
+
+        img {
+          width: 46px;
+          height: 46px;
+          border: 2px solid #fff;
+          border-radius: 100%;
+        }
+
+        p {
+          margin-left: 9px;
+        }
+
+        .user-id {
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        .user-name {
+          font-size: 14px;
+          color: #8e8e8e;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+
+  .icons {
+    margin-right: 240px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-left: 15px;
+    }
+  }
+}

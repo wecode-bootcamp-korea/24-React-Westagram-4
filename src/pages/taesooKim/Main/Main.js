@@ -2,22 +2,6 @@ import React from "react";
 import "./Main.scss";
 import "../../../styles/common.scss";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHeart,
-  faBookmark,
-  faTimesCircle,
-  faSearch,
-  faComment,
-  faPaperPlane,
-  faEllipsisH,
-  faTrashAlt,
-  faUserCircle,
-  faCog,
-} from "@fortawesome/free-solid-svg-icons";
-
-import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
-
 class Main extends React.Component {
   render() {
     return (
@@ -26,7 +10,7 @@ class Main extends React.Component {
           <nav className="navbar">
             <div className="westa-container">
               <a className="westa-logo" href="/">
-                <img src="../images/instagram.png" alt="westagram" />
+                <img src="/images/taesooKim/instagram.png" alt="westagram" />
               </a>
               <a className="westa-title" href="/">
                 <h1>Westagram</h1>
@@ -36,8 +20,12 @@ class Main extends React.Component {
               <input className="search-bar" type="text" />
               <div className="search-content">
                 <span className="search">검색</span>
-                <FontAwesomeIcon icon={faSearch} className="search-icon" />
-                <FontAwesomeIcon icon={faTimesCircle} className="times-icon" />
+                <div className="search-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div className="times-icon">
+                  <i class="fas fa-times-circle"></i>
+                </div>
               </div>
               <div className="suggestions-cap"></div>
               <div className="suggestions-container">
@@ -62,21 +50,21 @@ class Main extends React.Component {
               <div className="profile-container">
                 <ul className="profile-list">
                   <li>
-                    <FontAwesomeIcon
-                      icon={faUserCircle}
-                      className="profile-icon"
-                    />
+                    <div className="profile-icon">
+                      <i class="far fa-user-circle"></i>
+                    </div>
                     <span>프로필</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon
-                      icon={faBookmark}
-                      className="bookmark-icon"
-                    />
+                    <div className="bookmark-icon">
+                      <i class="far fa-bookmark"></i>
+                    </div>
                     <span>저장됨</span>
                   </li>
                   <li>
-                    <FontAwesomeIcon icon={faCog} className="cog-icon" />
+                    <div className="cog-icon">
+                      <i class="fas fa-cog"></i>
+                    </div>
                     <span>설정</span>
                   </li>
                   <li>
@@ -91,19 +79,29 @@ class Main extends React.Component {
           <section className="feeds">
             <article className="feeds-each">
               <div className="feeds-profile">
-                <img src="/images/tanggu.jpeg" alt="tanggu" />
+                <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                 <span>ttsone_ss</span>
-                <FontAwesomeIcon icon={faEllipsisH} className="more-icon" />
+                <div className="more-icon">
+                  <i class="fas fa-ellipsis-h"></i>
+                </div>
               </div>
-              <img src="/images/cookies.jpeg" alt="cookies" />
+              <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
               <div className="reaction">
-                <FontAwesomeIcon icon={faHeart} className="full-heart-icon" />
-                <FontAwesomeIcon icon={faComment} className="comment-icon" />
-                <FontAwesomeIcon icon={faPaperPlane} className="plane-icon" />
-                <FontAwesomeIcon icon={faBookmark} className="bookmark-icon" />
+                <div className="full-heart-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div className="heart-icon">
+                  <i class="far fa-comment"></i>
+                </div>
+                <div className="plane-icon">
+                  <i class="far fa-paper-plane"></i>
+                </div>
+                <div className="bookmark-icon">
+                  <i class="far fa-bookmark"></i>
+                </div>
               </div>
               <div className="like">
-                <img src="/images/orosy.jpg" alt="orosy" />
+                <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
                 <p className="many-likes">
                   <span>orosy.ts</span>님 <span>외 328명</span>이 좋아합니다
                 </p>
@@ -119,11 +117,12 @@ class Main extends React.Component {
                     <p>
                       <span>orosy.ts</span>저는 아직 받으려면 멀었네요😂
                     </p>
-                    <FontAwesomeIcon
-                      icon={farHeart}
-                      className="full-heart-icon"
-                    />
-                    <FontAwesomeIcon icon={faTrashAlt} className="trash-icon" />
+                    <div className="full-heart-icon">
+                      <i class="far fa-heart"></i>
+                    </div>
+                    <div className="trash-icon">
+                      <i class="far fa-trash-alt"></i>
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -142,7 +141,7 @@ class Main extends React.Component {
           </section>
           <aside className="main-right">
             <div className="my-profile">
-              <img src="/images/tanggu.jpeg" alt="tanggu" />
+              <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
               <div className="my-description">
                 <p className="profile-name">ttsone_ss</p>
                 <p className="profile-description">태연 TAEYEON</p>
@@ -155,28 +154,28 @@ class Main extends React.Component {
               </div>
               <ul className="story-update">
                 <li>
-                  <img src="/images/tanggu.jpeg" alt="tanggu" />
+                  <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                   <div className="story-namebox">
                     <p className="story-username">ttsone_ss</p>
                     <p className="story-time">16분 전</p>
                   </div>
                 </li>
                 <li>
-                  <img src="/images/tanggu.jpeg" alt="tanggu" />
+                  <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                   <div className="story-namebox">
                     <p className="story-username">ttsone_ss</p>
                     <p className="story-time">1시간 전</p>
                   </div>
                 </li>
                 <li>
-                  <img src="/images/tanggu.jpeg" alt="tanggu" />
+                  <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                   <div className="story-namebox">
                     <p className="story-username">ttsone_ss</p>
                     <p className="story-time">3시간 전</p>
                   </div>
                 </li>
                 <li>
-                  <img src="/images/tanggu.jpeg" alt="tanggu" />
+                  <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                   <div className="story-namebox">
                     <p className="story-username">ttsone_ss</p>
                     <p className="story-time">20시간 전</p>
@@ -191,7 +190,7 @@ class Main extends React.Component {
               </div>
               <ul className="recomm-list">
                 <li>
-                  <img src="/images/orosy.jpg" alt="orosy" />
+                  <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
                   <div className="recomm-namebox">
                     <p className="recomm-username">orosy.ts</p>
                     <p className="recomm-others">wecode_bootcamp님 외...</p>
@@ -199,7 +198,7 @@ class Main extends React.Component {
                   <p className="recomm-follow">팔로우</p>
                 </li>
                 <li>
-                  <img src="/images/orosy.jpg" alt="orosy" />
+                  <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
                   <div className="recomm-namebox">
                     <p className="recomm-username">orosy.ts</p>
                     <p className="recomm-others">회원님을 추천</p>
@@ -207,7 +206,7 @@ class Main extends React.Component {
                   <p className="recomm-follow">팔로우</p>
                 </li>
                 <li>
-                  <img src="/images/orosy.jpg" alt="orosy" />
+                  <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
                   <div className="recomm-namebox">
                     <p className="recomm-username">orosy.ts</p>
                     <p className="recomm-others">wecode_bootcamp님 외...</p>

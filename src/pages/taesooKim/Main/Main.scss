@@ -1,3 +1,12 @@
+/* reset */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
 /* Global */
 :root {
   /* Color */
@@ -63,7 +72,7 @@
       .search-content {
         .search {
           position: absolute;
-          top: 6px;
+          top: 7px;
           left: 94px;
           color: var(--color-light-gray);
           font-size: 14px;
@@ -75,7 +84,7 @@
         }
         .search-icon {
           position: absolute;
-          top: 9px;
+          top: 8px;
           left: 80px;
           color: var(--color-light-gray);
           font-size: 10px;
@@ -244,11 +253,9 @@
           }
         }
         .reaction {
+          display: flex;
           position: relative;
-          .full-heart-icon,
-          .comment-icon,
-          .plane-icon,
-          .fa-bookmark {
+          i {
             font-size: 26px;
             margin: 5px 0 5px 10px;
             color: var(--color-dark-gray);

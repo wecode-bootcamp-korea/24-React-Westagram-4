@@ -2,30 +2,32 @@ import React, { Component } from "react";
 import "./Login.scss";
 
 class LoginYoungHyun extends Component {
-  state = [
-    { id: "" },
-    { pw: "" },
-    {
-      isActive: false,
-    },
-  ];
-
-  // this.state = {
-  //   isActive: false
-  // }
-
-  hande;
+  state = {
+    id: "",
+    pw: "",
+    isActive: false,
+  };
 
   handleIdInput = e => {
     const i = e.target.value;
     this.setState({ id: i });
-    console.log(this.state.id);
+    console.log(this.state.id.length);
+    this.getBadgeClasses();
   };
 
   handlePwInput = e => {
     const i = e.target.value;
     this.setState({ pw: i });
     console.log(this.state.pw);
+  };
+
+  getBadgeClasses = () => {
+    if (this.state.id.length > 5) {
+      console.log(this.state.id.length);
+      return "active";
+    } else {
+      return false;
+    }
   };
 
   render() {
@@ -48,8 +50,9 @@ class LoginYoungHyun extends Component {
             />
             <button
               type="button"
-              className={this.isActive ? "active" : "loginBtn"}
-              onClick={this.goToMain}
+              className={this.getBadgeClasses()}
+              // onClick={this.onButton}
+              // onClick={this.goToMain}
             >
               로그인
             </button>

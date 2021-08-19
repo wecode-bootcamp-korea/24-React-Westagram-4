@@ -2,15 +2,27 @@ import React, { Component } from "react";
 import "./Login.scss";
 
 class LoginYoungHyun extends Component {
-  state = [{ id: "" }, { pw: "" }];
+  state = [
+    { id: "" },
+    { pw: "" },
+    {
+      isActive: false,
+    },
+  ];
 
-  handelIdInput = e => {
+  // this.state = {
+  //   isActive: false
+  // }
+
+  hande;
+
+  handleIdInput = e => {
     const i = e.target.value;
     this.setState({ id: i });
     console.log(this.state.id);
   };
 
-  handelPwInput = e => {
+  handlePwInput = e => {
     const i = e.target.value;
     this.setState({ pw: i });
     console.log(this.state.pw);
@@ -26,15 +38,19 @@ class LoginYoungHyun extends Component {
               type="text"
               className="id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handelIdInput}
+              onChange={this.handleIdInput}
             />
             <input
               type="password"
               className="pw"
               placeholder="비밀번호"
-              onChange={this.handelPwInput}
+              onChange={this.handlePwInput}
             />
-            <button type="button" className="loginBtn" onClick={this.goToMain}>
+            <button
+              type="button"
+              className={this.isActive ? "active" : "loginBtn"}
+              onClick={this.goToMain}
+            >
               로그인
             </button>
           </div>

@@ -3,6 +3,7 @@ import Aside from "./Aside/Aside";
 import Replies from "./Replies/Replies";
 import CommentForm from "./Replies/Comment";
 import "./Main.scss";
+import Nav from "../../../components/Nav/Nav";
 
 class MainHyunJae extends Component {
   state = {
@@ -23,6 +24,7 @@ class MainHyunJae extends Component {
   render() {
     return (
       <>
+        <Nav />
         <div className="containerCenter">
           <div className="mainArea">
             <section className="storyFeed">

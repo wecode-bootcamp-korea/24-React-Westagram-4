@@ -1,1 +1,55 @@
-// Nav.scssß
+.Nav {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 67px;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 4;
+
+  .instagram-logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 240px;
+    font-size: 22px;
+
+    .instagram-icon {
+      border-left: 2px solid #262626;
+      padding-left: 12px;
+      margin-left: 13px;
+      font-family: Lobster;
+    }
+  }
+  .search {
+    > input {
+      width: 200px;
+      height: 22px;
+      border: 1.7px solid #dbdbdb;
+      border-radius: 2px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: lighter;
+    }
+
+    > input:focus {
+      padding-left: 22px;
+      color: #262626;
+      text-align: left;
+    }
+  }
+
+  .icons {
+    margin-right: 240px;
+
+    img {
+      width: 25px;
+      height: 25px;
+      margin-left: 15px;
+    }
+  }
+}

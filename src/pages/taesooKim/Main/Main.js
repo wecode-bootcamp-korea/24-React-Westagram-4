@@ -1,5 +1,6 @@
 import React from "react";
 import Aside from "../Aside/Aside";
+import Nav from "../../../components/Nav/Nav";
 import Comment from "./Comment";
 import "./Main.scss";
 import "../../../styles/common.scss";
@@ -7,76 +8,8 @@ import "../../../styles/common.scss";
 class Main extends React.Component {
   render() {
     return (
-      <section className="Main">
-        <header>
-          <nav className="navbar">
-            <div className="westa-container">
-              <a className="westa-logo" href="/">
-                <img src="/images/taesooKim/instagram.png" alt="westagram" />
-              </a>
-              <a className="westa-title" href="/">
-                <h1>Westagram</h1>
-              </a>
-            </div>
-            <div className="search-container">
-              <input className="search-bar" type="text" />
-              <div className="search-content">
-                <span className="search">검색</span>
-                <div className="search-icon">
-                  <i class="fas fa-search"></i>
-                </div>
-                <div className="times-icon">
-                  <i class="fas fa-times-circle"></i>
-                </div>
-              </div>
-              <div className="suggestions-cap"></div>
-              <div className="suggestions-container">
-                <ul className="suggestions-list"></ul>
-              </div>
-            </div>
-            <div className="mypage-container">
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
-                alt="explore"
-              />
-              <img
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                alt="heart"
-              />
-              <img
-                className="profile-img"
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
-                alt="profile"
-              />
-              <div className="profile-cap"></div>
-              <div className="profile-container">
-                <ul className="profile-list">
-                  <li>
-                    <div className="profile-icon">
-                      <i class="far fa-user-circle"></i>
-                    </div>
-                    <span>프로필</span>
-                  </li>
-                  <li>
-                    <div className="bookmark-icon">
-                      <i class="far fa-bookmark"></i>
-                    </div>
-                    <span>저장됨</span>
-                  </li>
-                  <li>
-                    <div className="cog-icon">
-                      <i class="fas fa-cog"></i>
-                    </div>
-                    <span>설정</span>
-                  </li>
-                  <li>
-                    <p>로그아웃</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </header>
+      <section className="section-main">
+        <Nav />
         <main className="main">
           <section className="feeds">
             <article className="feeds-each">

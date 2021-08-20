@@ -24,7 +24,6 @@ export class Comment extends Component {
   };
 
   render() {
-    console.log(this.state.commentList);
     return (
       <div>
         <div className="feed-comment">

@@ -6,8 +6,6 @@ import "../../../styles/common.scss";
 class Login extends React.Component {
   constructor() {
     super();
-    this.handleIdInput = this.handleIdInput.bind(this);
-    this.handlePwInput = this.handlePwInput.bind(this);
     this.state = {
       IdVal: "",
       PwVal: "",

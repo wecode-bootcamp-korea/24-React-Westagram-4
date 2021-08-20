@@ -1,5 +1,6 @@
 import React from "react";
 import Aside from "../Aside/Aside";
+import Comment from "./Comment";
 import "./Main.scss";
 import "../../../styles/common.scss";
 
@@ -112,32 +113,7 @@ class Main extends React.Component {
                 무엇일까요?...
                 <span className="more">더 보기</span>
               </div>
-              <div className="feed-comment">
-                <ul className="comments">
-                  <li>
-                    <p>
-                      <span>orosy.ts</span>저는 아직 받으려면 멀었네요😂
-                    </p>
-                    <div className="full-heart-icon">
-                      <i class="far fa-heart"></i>
-                    </div>
-                    <div className="trash-icon">
-                      <i class="far fa-trash-alt"></i>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <p className="post-time">42분 전</p>
-              <div className="write-comments">
-                <form className="comment-form">
-                  <input
-                    className="comment-post"
-                    type="text"
-                    placeholder="댓글 달기..."
-                  />
-                  <button className="btn-post">게시</button>
-                </form>
-              </div>
+              <Comment />
             </article>
           </section>
           <Aside />

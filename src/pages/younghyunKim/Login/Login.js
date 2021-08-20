@@ -9,10 +9,9 @@ class LoginYoungHyun extends Component {
   };
 
   handleInput = e => {
-    // const i = e.target.value;
-    this.setState({ [e.target.className]: e.target.value }, () => {
+    const { className, value } = e.target;
+    this.setState({ [className]: value }, () => {
       if (this.state.id.indexOf("@") !== -1 && this.state.pw.length > 5) {
-        // console.log(this.state.pw.length);
         this.setState({ isActive: true });
       } else {
         this.setState({ isActive: false });
@@ -20,29 +19,9 @@ class LoginYoungHyun extends Component {
     });
   };
 
-  // handleIdInput = e => {
-  //   const i = e.target.value;
-  //   this.setState({ id: i });
-  //   console.log(this.state.id.length);
-  // };
-
-  // handlePwInput = e => {
-  //   const i = e.target.value;
-  //   this.setState({ pw: i });
-  //   console.log(this.state.pw);
-  // };
-
   goToMain = () => {
     this.props.history.push("/main");
   };
-
-  // getBadgeClasses = () => {
-  //   if (this.state.id.length > 5) {
-  //     // this.setState({ isActive: !this.state.isActive });
-  //   } else {
-  //     return "";
-  //   }
-  // };
 
   render() {
     return (

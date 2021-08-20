@@ -20,7 +20,7 @@ class LoginYoungHyun extends Component {
   };
 
   goToMain = () => {
-    this.props.history.push("/main");
+    this.props.history.push("/main-hyun");
   };
 
   render() {

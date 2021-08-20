@@ -1,9 +1,25 @@
 import React, { Component } from "react";
 import Aside from "./Aside/Aside";
 import Replies from "./Replies/Replies";
+import CommentForm from "./Replies/Comment";
 import "./Main.scss";
 
 class MainHyunJae extends Component {
+  state = {
+    replies: [
+      { id: 1, userName: "chillin1980", content: "@jis20da" },
+      { id: 2, userName: "gumbong2", content: "@funky1o.ve" },
+    ],
+  };
+
+  handleAdd = comment => {
+    const replies = [
+      ...this.state.replies,
+      { id: Date.now(), userName: "hyun__jjae", content: comment },
+    ];
+    this.setState({ replies });
+  };
+
   render() {
     return (
       <>
@@ -166,22 +182,15 @@ class MainHyunJae extends Component {
                       <a href="#" className="moreLink">
                         View all 9 comments
                       </a>
-                      <Replies className="replies" />
+                      <Replies
+                        className="replies"
+                        replies={this.state.replies}
+                      />
                     </div>
                     <div className="pastDay">2 HOURS AGO</div>
                   </div>
                 </div>
-                <div className="commentForm content-box">
-                  <button className="icon emoji" type="button"></button>
-                  <input
-                    type="text"
-                    className="commentInput"
-                    placeholder="Add a comment..."
-                  />
-                  <button type="button" className="Btn inactive commentPost">
-                    Post
-                  </button>
-                </div>
+                <CommentForm onSubmit={this.handleAdd} />
               </article>
             </section>
           </div>

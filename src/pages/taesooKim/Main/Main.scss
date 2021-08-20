@@ -191,6 +191,9 @@ a {
             background: none;
             color: var(--color-light-blue);
             cursor: pointer;
+            &.active {
+              color: var(--color-blue);
+            }
           }
         }
       }

@@ -24,6 +24,7 @@ export class Comment extends Component {
   };
 
   render() {
+    console.log(this.state.value);
     return (
       <div>
         <div className="feed-comment">
@@ -65,7 +66,9 @@ export class Comment extends Component {
               value={this.state.value}
               onChange={this.getValue}
             />
-            <button className="btn-post">게시</button>
+            <button className={`btn-post ${this.state.value ? "active" : ""}`}>
+              게시
+            </button>
           </form>
         </div>
       </div>

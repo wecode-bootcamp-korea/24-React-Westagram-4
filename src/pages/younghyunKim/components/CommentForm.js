@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-class Comments extends Component {
+class CommentForm extends Component {
   inputRef = React.createRef();
 
-  pushComment = e => {
-    e.preventDefault();
+  pushComment = event => {
+    event.preventDefault();
     const plusComment = this.inputRef.current.value;
-    plusComment && this.props.onAdd(plusComment);
+    plusComment && this.props.onSubmit(plusComment);
+    this.inputRef.current.value = "";
   };
 
   render() {
@@ -24,4 +25,4 @@ class Comments extends Component {
   }
 }
 
-export default Comments;
+export default CommentForm;

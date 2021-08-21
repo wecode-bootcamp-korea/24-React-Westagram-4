@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import Nav from "../../../components/Nav/Nav";
-import Comments from "../components/Comments";
 import WritingComment from "../components/WritingComment";
+import CommentForm from "../components/CommentForm";
+// import CommentForm from "../components/CommentForm";
+// import WritingComment from "../components/WritingComment";
 import "./Main.scss";
 
 class MainYoungHyun extends Component {
   state = {
-    comments: [{ id: 1, comment: "안녕하세요" }],
+    comments: [{ id: 1, comment: "안녕하세요!" }],
   };
 
   handleAdd = plusComment => {
@@ -19,7 +21,6 @@ class MainYoungHyun extends Component {
 
   render() {
     return (
-      // console.log(this.state.comments.comment);
       <div className="main">
         <Nav />
         <div className="margin-value">
@@ -98,12 +99,13 @@ class MainYoungHyun extends Component {
                     송원아트센터에서 진행하는 뉴 랜덤 다이버시티 전시 📷
                   </span>
                 </div>
-                <div onAdd={this.handleAdd} className="feeds-comment">
-                  <WritingComment />
-                </div>
+
+                {this.state.comments.map(content => (
+                  <WritingComment content={content} comment={content.comment} />
+                ))}
                 <span className="time">42분 전</span>
               </div>
-              <Comments />
+              <CommentForm onSubmit={this.handleAdd} />
             </div>
           </div>
           <div className="main-right">

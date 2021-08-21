@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import "./WritingComment.scss";
 
 class WritingComment extends Component {
-  // deleteComment = e => {
-  //   let comment = e.targert.parentNode;
-  //   comment.remove();
-  // };
+  handleDelete = () => {
+    this.props.onDelete(this.props.content);
+  };
   render() {
     return (
       <div className="feeds-comment">
@@ -13,7 +12,7 @@ class WritingComment extends Component {
           <span className="comment-id">0hyun0hyun</span>
           <span className="comment-writing">{this.props.comment}</span>
         </div>
-        <button onClick={this.deleteComment}>
+        <button onClick={this.handleDelete}>
           <i className="far fa-times-circle"></i>
         </button>
         <button>

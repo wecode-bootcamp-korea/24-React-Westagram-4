@@ -19,6 +19,11 @@ class MainYoungHyun extends Component {
     this.setState({ comments });
   };
 
+  handleDelete = content => {
+    let comments = this.state.comments.filter(item => item.id !== content.id);
+    this.setState({ comments });
+  };
+
   render() {
     return (
       <div className="main">
@@ -101,7 +106,12 @@ class MainYoungHyun extends Component {
                 </div>
 
                 {this.state.comments.map(content => (
-                  <WritingComment content={content} comment={content.comment} />
+                  <WritingComment
+                    content={content}
+                    comment={content.comment}
+                    onDelete={this.handleDelete}
+                    key={content.id}
+                  />
                 ))}
                 <span className="time">42분 전</span>
               </div>

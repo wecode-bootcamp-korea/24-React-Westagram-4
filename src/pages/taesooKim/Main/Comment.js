@@ -2,29 +2,8 @@ import React, { Component } from "react";
 import CommentList from "./CommentList";
 
 export class Comment extends Component {
-  constructor() {
-    super();
-    this.state = {
-      value: "",
-      commentList: [],
-    };
-  }
-
-  getValue = e => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
-
-  addComment = e => {
-    e.preventDefault();
-    this.setState({
-      commentList: this.state.commentList.concat([this.state.value]),
-      value: "",
-    });
-  };
-
   render() {
+    const { value, commentList, getValue, addComment } = this.props;
     return (
       <div>
         <div className="feed-comment">
@@ -40,20 +19,20 @@ export class Comment extends Component {
                 <i className="far fa-trash-alt"></i>
               </div>
             </li>
-            <CommentList list={this.state.commentList} />
+            <CommentList list={commentList} />
           </ul>
         </div>
         <p className="post-time">42분 전</p>
         <div className="write-comments">
-          <form className="comment-form" onSubmit={this.addComment}>
+          <form className="comment-form" onSubmit={addComment}>
             <input
               className="comment-post"
               type="text"
               placeholder="댓글 달기..."
-              value={this.state.value}
-              onChange={this.getValue}
+              value={value}
+              onChange={getValue}
             />
-            <button className={`btn-post ${this.state.value ? "active" : ""}`}>
+            <button className={`btn-post ${value ? "active" : ""}`}>
               게시
             </button>
           </form>

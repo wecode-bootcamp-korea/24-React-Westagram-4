@@ -6,6 +6,28 @@ import "./Main.scss";
 import "../../../styles/common.scss";
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: "",
+      commentList: [],
+    };
+  }
+
+  getValue = e => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
+  addComment = e => {
+    e.preventDefault();
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.value]),
+      value: "",
+    });
+  };
+
   render() {
     return (
       <section className="section-main">
@@ -46,7 +68,12 @@ class Main extends React.Component {
                 무엇일까요?...
                 <span className="more">더 보기</span>
               </div>
-              <Comment />
+              <Comment
+                value={this.state.value}
+                commentList={this.state.commentList}
+                addComment={this.addComment}
+                getValue={this.getValue}
+              />
             </article>
           </section>
           <Aside />

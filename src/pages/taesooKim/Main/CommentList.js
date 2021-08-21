@@ -6,11 +6,11 @@ export class EachComment extends Component {
     const list = this.props.list;
     return (
       <div>
-        {list.map(index => {
+        {list.map((comment, index) => {
           return (
             <li key={index}>
               <span>orosy.ts</span>
-              <CommentOne comment={index} />
+              <CommentOne comm={comment} />
               <div className="full-heart-icon">
                 <i className="far fa-heart"></i>
               </div>

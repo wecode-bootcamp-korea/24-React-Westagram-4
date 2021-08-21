@@ -25,6 +25,7 @@ class Login extends React.Component {
   };
 
   render() {
+    const { IdVal, PwVal } = this.state;
     return (
       <section className="login">
         <h1 className="title">Westagram</h1>
@@ -34,22 +35,19 @@ class Login extends React.Component {
               className="username"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={this.state.IdVal}
+              value={IdVal}
               onChange={this.handleIdInput}
             />
             <input
               className="password"
               type="password"
               placeholder="비밀번호"
-              value={this.state.PwVal}
+              value={PwVal}
               onChange={this.handlePwInput}
             />
             <button
               className={`btn ${
-                this.state.IdVal.indexOf("@") !== -1 &&
-                this.state.PwVal.length >= 5
-                  ? "active"
-                  : ""
+                IdVal.indexOf("@") !== -1 && PwVal.length >= 5 ? "active" : ""
               }`}
             >
               <span>로그인</span>

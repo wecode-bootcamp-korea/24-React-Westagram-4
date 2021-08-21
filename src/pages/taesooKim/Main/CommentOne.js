@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 export class CommentOne extends Component {
   render() {
-    const comment = this.props.comment;
-    return <div key={comment.toString()}>{comment}</div>;
+    const comm = this.props.comm;
+    return <div key={comm.toString()}>{comm}</div>;
   }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import Aside from "../Aside/Aside";
 import Nav from "../../../components/Nav/Nav";
 import Comment from "./Comment";
+import FeedLike from "./FeedLike";
 import "./Main.scss";
 import "../../../styles/common.scss";
 
@@ -11,6 +12,7 @@ class Main extends React.Component {
     this.state = {
       value: "",
       commentList: [],
+      isClicked: false,
     };
   }
 
@@ -26,6 +28,10 @@ class Main extends React.Component {
       commentList: this.state.commentList.concat([this.state.value]),
       value: "",
     });
+  };
+
+  handleClick = () => {
+    this.setState({ isClicked: !this.state.isClicked });
   };
 
   render() {
@@ -44,11 +50,12 @@ class Main extends React.Component {
               </div>
               <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
               <div className="reaction">
-                <div className="full-heart-icon">
-                  <i className="far fa-heart"></i>
-                </div>
-                <div className="heart-icon">
-                  <i className="far fa-comment"></i>
+                <FeedLike
+                  likeFeed={this.state.isClicked}
+                  likeFeedBtn={this.handleClick}
+                />
+                <div className="plane-icon">
+                  <i class="far fa-comment"></i>
                 </div>
                 <div className="plane-icon">
                   <i className="far fa-paper-plane"></i>

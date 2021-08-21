@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CommentList from "./CommentList";
 
 export class Comment extends Component {
   constructor() {
@@ -24,7 +25,6 @@ export class Comment extends Component {
   };
 
   render() {
-    console.log(this.state.value);
     return (
       <div>
         <div className="feed-comment">
@@ -40,20 +40,7 @@ export class Comment extends Component {
                 <i class="far fa-trash-alt"></i>
               </div>
             </li>
-            {this.state.commentList.map((comment, index) => {
-              return (
-                <li key={index}>
-                  <span>orosy.ts</span>
-                  {comment}
-                  <div className="full-heart-icon">
-                    <i class="far fa-heart"></i>
-                  </div>
-                  <div className="trash-icon">
-                    <i class="far fa-trash-alt"></i>
-                  </div>
-                </li>
-              );
-            })}
+            <CommentList list={this.state.commentList} />
           </ul>
         </div>
         <p className="post-time">42분 전</p>

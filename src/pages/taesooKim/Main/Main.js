@@ -23,7 +23,7 @@ class Main extends React.Component {
               <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
               <div className="reaction">
                 <div className="full-heart-icon">
-                  <i class="fas fa-heart"></i>
+                  <i class="far fa-heart"></i>
                 </div>
                 <div className="heart-icon">
                   <i class="far fa-comment"></i>

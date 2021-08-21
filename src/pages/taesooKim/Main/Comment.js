@@ -34,10 +34,10 @@ export class Comment extends Component {
                 <span>orosy.ts</span>저는 아직 받으려면 멀었네요😂
               </p>
               <div className="full-heart-icon">
-                <i class="far fa-heart"></i>
+                <i className="far fa-heart"></i>
               </div>
               <div className="trash-icon">
-                <i class="far fa-trash-alt"></i>
+                <i className="far fa-trash-alt"></i>
               </div>
             </li>
             <CommentList list={this.state.commentList} />

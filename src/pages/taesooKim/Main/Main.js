@@ -17,22 +17,22 @@ class Main extends React.Component {
                 <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
                 <span>ttsone_ss</span>
                 <div className="more-icon">
-                  <i class="fas fa-ellipsis-h"></i>
+                  <i className="fas fa-ellipsis-h"></i>
                 </div>
               </div>
               <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
               <div className="reaction">
                 <div className="full-heart-icon">
-                  <i class="far fa-heart"></i>
+                  <i className="far fa-heart"></i>
                 </div>
                 <div className="heart-icon">
-                  <i class="far fa-comment"></i>
+                  <i className="far fa-comment"></i>
                 </div>
                 <div className="plane-icon">
-                  <i class="far fa-paper-plane"></i>
+                  <i className="far fa-paper-plane"></i>
                 </div>
                 <div className="bookmark-icon">
-                  <i class="far fa-bookmark"></i>
+                  <i className="far fa-bookmark"></i>
                 </div>
               </div>
               <div className="like">

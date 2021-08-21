@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./CommentForm.scss";
 
 class CommentForm extends Component {
   inputRef = React.createRef();

@@ -7,7 +7,7 @@ export class FeedLike extends Component {
       <div className="heart-icon">
         <i
           onClick={likeFeedBtn}
-          className={`${likeFeed === true ? "fas" : "far"} fa-heart`}
+          className={`${likeFeed ? "fas" : "far"} fa-heart`}
         ></i>
       </div>
     );

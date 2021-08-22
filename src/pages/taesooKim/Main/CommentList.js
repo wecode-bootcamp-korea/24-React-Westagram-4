@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentOne from "./CommentOne";
 
-export class EachComment extends Component {
+export class CommentList extends Component {
   render() {
     const list = this.props.list;
     return (
@@ -25,4 +25,4 @@ export class EachComment extends Component {
   }
 }
 
-export default EachComment;
+export default CommentList;

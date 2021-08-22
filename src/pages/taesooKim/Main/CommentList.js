@@ -3,7 +3,7 @@ import CommentOne from "./CommentOne";
 
 export class CommentList extends Component {
   render() {
-    const list = this.props.list;
+    const { list } = this.props;
     return (
       <div>
         {list.map((comment, index) => {
@@ -11,7 +11,7 @@ export class CommentList extends Component {
             <li key={index}>
               <span>orosy.ts</span>
               <CommentOne comm={comment} />
-              <div className="full-heart-icon">
+              <div className="heart-icon">
                 <i className="far fa-heart"></i>
               </div>
               <div className="trash-icon">

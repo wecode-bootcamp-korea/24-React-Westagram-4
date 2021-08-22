@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import CommentList from "./CommentList";
+import BtnLike from "./BtnLike";
 
 export class Comment extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isClicked: false,
+    };
+  }
+
+  handleClick = () => {
+    this.setState({ isClicked: !this.state.isClicked });
+  };
+
   render() {
     const { value, commentList, getValue, addComment } = this.props;
     return (
@@ -12,9 +24,10 @@ export class Comment extends Component {
               <p>
                 <span>orosy.ts</span>저는 아직 받으려면 멀었네요😂
               </p>
-              <div className="full-heart-icon">
-                <i className="far fa-heart"></i>
-              </div>
+              <BtnLike
+                isClicked={this.state.isClicked}
+                handleClick={this.handleClick}
+              />
               <div className="trash-icon">
                 <i className="far fa-trash-alt"></i>
               </div>

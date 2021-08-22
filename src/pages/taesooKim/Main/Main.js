@@ -2,7 +2,7 @@ import React from "react";
 import Aside from "../Aside/Aside";
 import Nav from "../../../components/Nav/Nav";
 import Comment from "./Comment";
-import FeedLike from "./FeedLike";
+import BtnLike from "./BtnLike";
 import "./Main.scss";
 import "../../../styles/common.scss";
 
@@ -50,9 +50,9 @@ class Main extends React.Component {
               </div>
               <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
               <div className="reaction">
-                <FeedLike
-                  likeFeed={this.state.isClicked}
-                  likeFeedBtn={this.handleClick}
+                <BtnLike
+                  isClicked={this.state.isClicked}
+                  handleClick={this.handleClick}
                 />
                 <div className="plane-icon">
                   <i class="far fa-comment"></i>

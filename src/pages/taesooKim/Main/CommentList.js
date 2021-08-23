@@ -1,25 +1,65 @@
 import React, { Component } from "react";
-import CommentOne from "./CommentOne";
+import Comment from "./Comment";
+import BtnLike from "./BtnLike";
 
 export class CommentList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isClicked: false,
+    };
+  }
+
+  handleClick = () => {
+    this.setState({ isClicked: !this.state.isClicked });
+  };
+
   render() {
-    const { list } = this.props;
+    const { value, commentList, getValue, addComment } = this.props;
     return (
       <div>
-        {list.map((comment, index) => {
-          return (
-            <li key={index}>
-              <span>orosy.ts</span>
-              <CommentOne comm={comment} />
-              <div className="heart-icon">
-                <i className="far fa-heart"></i>
-              </div>
+        <div className="feed-comment">
+          <ul className="comments">
+            <li>
+              <p>
+                <span>orosy.ts</span>저는 아직 받으려면 멀었네요😂
+              </p>
+              <BtnLike
+                isClicked={this.state.isClicked}
+                handleClick={this.handleClick}
+              />
               <div className="trash-icon">
                 <i className="far fa-trash-alt"></i>
               </div>
             </li>
-          );
-        })}
+            <div>
+              {commentList.map(comment => {
+                return (
+                  <Comment
+                    key={comment.id}
+                    name={comment.userName}
+                    comment={comment.content}
+                  />
+                );
+              })}
+            </div>
+          </ul>
+        </div>
+        <p className="post-time">42분 전</p>
+        <div className="write-comments">
+          <form className="comment-form" onSubmit={addComment}>
+            <input
+              className="comment-post"
+              type="text"
+              placeholder="댓글 달기..."
+              value={value}
+              onChange={getValue}
+            />
+            <button className={`btn-post ${value ? "active" : ""}`}>
+              게시
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

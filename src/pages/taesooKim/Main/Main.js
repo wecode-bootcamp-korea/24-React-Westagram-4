@@ -1,7 +1,8 @@
 import React from "react";
 import Aside from "../Aside/Aside";
 import Nav from "../../../components/Nav/Nav";
-import Comment from "./Comment";
+import CommentList from "./CommentList";
+import FeedList from "./FeedList";
 import BtnLike from "./BtnLike";
 import "./Main.scss";
 import "../../../styles/common.scss";
@@ -12,8 +13,31 @@ class Main extends React.Component {
     this.state = {
       value: "",
       commentList: [],
+      feedList: [],
       isClicked: false,
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+
+    fetch("http://localhost:3000/data/feedData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedList: data,
+        });
+      });
   }
 
   getValue = e => {
@@ -49,6 +73,7 @@ class Main extends React.Component {
                 </div>
               </div>
               <img src="/images/taesooKim/cookies.jpeg" alt="cookies" />
+              <FeedList feedList={this.state.feedList} />
               <div className="reaction">
                 <BtnLike
                   isClicked={this.state.isClicked}
@@ -75,7 +100,7 @@ class Main extends React.Component {
                 무엇일까요?...
                 <span className="more">더 보기</span>
               </div>
-              <Comment
+              <CommentList
                 value={this.state.value}
                 commentList={this.state.commentList}
                 addComment={this.addComment}

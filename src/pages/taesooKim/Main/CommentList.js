@@ -7,7 +7,20 @@ export class CommentList extends Component {
     super();
     this.state = {
       isClicked: false,
+      commentList: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
   }
 
   handleClick = () => {
@@ -15,7 +28,7 @@ export class CommentList extends Component {
   };
 
   render() {
-    const { value, commentList, getValue, addComment } = this.props;
+    const { value, getValue, addComment } = this.props;
     return (
       <div>
         <div className="feed-comment">
@@ -33,7 +46,7 @@ export class CommentList extends Component {
               </div>
             </li>
             <div>
-              {commentList.map(comment => {
+              {this.state.commentList.map(comment => {
                 return (
                   <Comment
                     key={comment.id}

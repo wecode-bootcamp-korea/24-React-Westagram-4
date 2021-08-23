@@ -7,21 +7,38 @@ import Nav from "../../../components/Nav/Nav";
 
 class MainHyunJae extends Component {
   state = {
-    replies: [
-      { id: 1, userName: "chillin1980", content: "@jis20da" },
-      { id: 2, userName: "gumbong2", content: "@funky1o.ve" },
-    ],
+    commentList: [],
   };
 
+  // state = {
+  //   replies: [
+  //     { id: 1, userName: "chillin1980", content: "@jis20da" },
+  //     { id: 2, userName: "gumbong2", content: "@funky1o.ve" },
+  //   ],
+  // };
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
+
   handleAdd = comment => {
-    const replies = [
-      ...this.state.replies,
+    const commentList = [
+      ...this.state.commentList,
       { id: Date.now(), userName: "hyun__jjae", content: comment },
     ];
-    this.setState({ replies });
+    this.setState({ commentList });
   };
 
   render() {
+    const { commentList } = this.state;
     return (
       <>
         <Nav />
@@ -186,7 +203,7 @@ class MainHyunJae extends Component {
                       </a>
                       <Replies
                         className="replies"
-                        replies={this.state.replies}
+                        commentList={this.state.commentList}
                       />
                     </div>
                     <div className="pastDay">2 HOURS AGO</div>

@@ -5,7 +5,7 @@ export default class Replies extends Component {
   render() {
     return (
       <ul>
-        {this.props.replies.map(reply => (
+        {this.props.commentList.map(reply => (
           <Reply
             reply={reply}
             userName={reply.userName}

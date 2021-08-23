@@ -10,13 +10,6 @@ class MainHyunJae extends Component {
     commentList: [],
   };
 
-  // state = {
-  //   replies: [
-  //     { id: 1, userName: "chillin1980", content: "@jis20da" },
-  //     { id: 2, userName: "gumbong2", content: "@funky1o.ve" },
-  //   ],
-  // };
-
   componentDidMount() {
     fetch("http://localhost:3000/data/commentData.json", {
       method: "GET",

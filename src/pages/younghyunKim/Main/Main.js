@@ -8,13 +8,25 @@ import "./Main.scss";
 
 class MainYoungHyun extends Component {
   state = {
-    comments: [{ id: 1, comment: "안녕하세요!" }],
+    comments: [],
   };
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentDatayounghyun.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          comments: data,
+        });
+      });
+  }
 
   handleAdd = plusComment => {
     let comments = [
       ...this.state.comments,
-      { id: Date.now(), comment: plusComment },
+      { id: Date.now(), userName: "0hyun0hyun", comment: plusComment },
     ];
     this.setState({ comments });
   };
@@ -104,15 +116,17 @@ class MainYoungHyun extends Component {
                     송원아트센터에서 진행하는 뉴 랜덤 다이버시티 전시 📷
                   </span>
                 </div>
-
-                {this.state.comments.map(content => (
-                  <WritingComment
-                    content={content}
-                    comment={content.comment}
-                    onDelete={this.handleDelete}
-                    key={content.id}
-                  />
-                ))}
+                <div>
+                  {this.state.comments.map(content => (
+                    <WritingComment
+                      content={content}
+                      comment={content.comment}
+                      username={content.userName}
+                      onDelete={this.handleDelete}
+                      key={content.id}
+                    />
+                  ))}
+                </div>
                 <span className="time">42분 전</span>
               </div>
               <CommentForm onSubmit={this.handleAdd} />

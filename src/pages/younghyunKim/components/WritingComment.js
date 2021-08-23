@@ -9,7 +9,7 @@ class WritingComment extends Component {
     return (
       <div className="feeds-comment">
         <div className="commentDiv">
-          <span className="comment-id">0hyun0hyun</span>
+          <span className="comment-id">{this.props.username}</span>
           <span className="comment-writing">{this.props.comment}</span>
         </div>
         <button onClick={this.handleDelete}>

@@ -3,10 +3,12 @@ import Content from "./Content";
 
 export default class Contents extends Component {
   render() {
-    const { commentList, onSubmit } = this.props;
+    const { feeds, onSubmit } = this.props;
     return (
       <section className="contents">
-        <Content commentList={commentList} onSubmit={onSubmit} />
+        {feeds.map(content => (
+          <Content content={content} onSubmit={onSubmit} />
+        ))}
       </section>
     );
   }

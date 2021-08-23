@@ -6,7 +6,7 @@ import "./Main.scss";
 
 class MainHyunJae extends Component {
   state = {
-    commentList: [],
+    feeds: [],
   };
 
   componentDidMount() {
@@ -16,18 +16,18 @@ class MainHyunJae extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          commentList: data,
+          feeds: data,
         });
       });
   }
 
-  handleAdd = comment => {
-    const commentList = [
-      ...this.state.commentList,
-      { id: Date.now(), userName: "hyun__jjae", content: comment },
-    ];
-    this.setState({ commentList });
-  };
+  // handleAdd = comment => {
+  //   const commentList = [
+  //     ...this.state.commentList,
+  //     { id: Date.now(), userName: "hyun__jjae", content: comment },
+  //   ];
+  //   this.setState({ commentList });
+  // };
 
   render() {
     return (
@@ -136,10 +136,7 @@ class MainHyunJae extends Component {
               </ul>
               <button className="showNext icon"></button>
             </section>
-            <Contents
-              commentList={this.state.commentList}
-              onSubmit={this.handleAdd}
-            />
+            <Contents feeds={this.state.feeds} onSubmit={this.handleAdd} />
           </div>
           <Aside />
         </div>

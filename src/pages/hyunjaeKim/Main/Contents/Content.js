@@ -62,7 +62,7 @@ export default class Content extends Component {
               </a>
               <Replies
                 className="replies"
-                commentList={this.props.commentList}
+                content={this.props.content.comments}
               />
             </div>
             <div className="pastDay">2 HOURS AGO</div>

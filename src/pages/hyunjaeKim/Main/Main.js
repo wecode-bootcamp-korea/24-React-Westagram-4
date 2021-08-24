@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Aside from "./Aside/Aside";
 import Nav from "../../../components/Nav/Nav";
 import Contents from "./Contents/Contents";
+import Aside from "./Aside/Aside";
 import "./Main.scss";
 
 class MainHyunJae extends Component {

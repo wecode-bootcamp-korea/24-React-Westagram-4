@@ -4,7 +4,7 @@ import CommentList from "./CommentList";
 
 export class Feed extends Component {
   render() {
-    const { name, profile, image, value, commentList, addComment, getValue } =
+    const { name, profile, image, value, addComment, getValue, comment } =
       this.props;
     return (
       <div className="feeds-each">
@@ -15,13 +15,13 @@ export class Feed extends Component {
             <i className="fas fa-ellipsis-h"></i>
           </div>
         </div>
-        <img src={image} alt="cookies" />
+        <img className="feeds-image" src={image} alt="cookies" />
         <Reaction />
         <CommentList
           value={value}
-          commentList={commentList}
           addComment={addComment}
           getValue={getValue}
+          comment={comment}
         />
       </div>
     );

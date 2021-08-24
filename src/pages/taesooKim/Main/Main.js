@@ -48,7 +48,6 @@ class Main extends React.Component {
           <section className="feeds">
             <FeedList
               value={this.state.value}
-              commentList={this.state.commentList}
               feedList={this.state.feedList}
               getValue={this.getValue}
               addComment={this.addComment}

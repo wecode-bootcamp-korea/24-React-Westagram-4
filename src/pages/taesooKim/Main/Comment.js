@@ -6,7 +6,7 @@ export class Comment extends Component {
     return (
       <li>
         <span>{name}</span>
-        <p>{comment}</p>;
+        <p>{comment}</p>
         <div className="heart-icon">
           <i className="far fa-heart"></i>
         </div>

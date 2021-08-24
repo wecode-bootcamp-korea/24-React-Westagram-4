@@ -3,24 +3,104 @@
     "id": 1,
     "userName": "chs",
     "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U025M9G6N2W-cfe8bea55975-512",
-    "feedImg": "/images/taesooKim/ssakthree.jpeg"
+    "feedImg": "/images/taesooKim/ssakthree.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "eunjeongPark",
+        "content": "사진 내려주세요",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "muk",
+        "content": "왜 전 없죠?",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "bluestar",
+        "content": "?",
+        "isLiked": false
+      }
+    ]
   },
   {
     "id": 2,
     "userName": "chichiheonheon",
     "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U025MFFQU1Z-bb277e336748-512",
-    "feedImg": "/images/taesooKim/thieves.jpeg"
+    "feedImg": "/images/taesooKim/thieves.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "chs",
+        "content": "왜 맘대로 도촬하세요",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "orosy.ts",
+        "content": "우왕 잘생겼당",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "eunjeongPark",
+        "content": "저는 저렇게 찍어놓고..",
+        "isLiked": false
+      }
+    ]
   },
   {
     "id": 3,
     "userName": "muk",
     "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U025M9G5UUA-ec19d75a76ae-192",
-    "feedImg": "/images/taesooKim/hotel.jpeg"
+    "feedImg": "/images/taesooKim/hotel.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "orosy.ts",
+        "content": "어 저 여기 가봤어요 후후",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "chichiheonheon",
+        "content": "저도 내일 놀러갈겁니다",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "bluestar",
+        "content": "?",
+        "isLiked": false
+      }
+    ]
   },
   {
     "id": 4,
     "userName": "bluestar",
     "profileImg": "https://ca.slack-edge.com/TH0U6FBTN-U0256HN8V2T-de469827b54b-192",
-    "feedImg": "/images/taesooKim/curry.jpeg"
+    "feedImg": "/images/taesooKim/curry.jpeg",
+    "comment": [
+      {
+        "id": 1,
+        "userName": "chs",
+        "content": "그렇게 생각하죠 파란별님?",
+        "isLiked": true
+      },
+      {
+        "id": 2,
+        "userName": "orosy.ts",
+        "content": "파란별님 대답 좀 해주세요",
+        "isLiked": false
+      },
+      {
+        "id": 3,
+        "userName": "muk",
+        "content": "저녁이나 드시러 가시죠",
+        "isLiked": false
+      }
+    ]
   }
 ]

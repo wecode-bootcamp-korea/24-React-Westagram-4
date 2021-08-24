@@ -24,6 +24,7 @@ export class FeedList extends Component {
               name={feed.userName}
               profile={feed.profileImg}
               image={feed.feedImg}
+              comment={feed.comment}
             />
           );
         })}

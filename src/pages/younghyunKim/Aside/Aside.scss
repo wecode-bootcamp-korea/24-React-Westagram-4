@@ -1,1 +1,201 @@
-// aside
+.main-right {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin-bottom: 30px;
+  top: 100px;
+  right: 240px;
+  width: 280px;
+  height: 500px;
+  z-index: 1;
+
+  .story {
+    height: 300px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    background-color: white;
+    overflow: auto;
+  }
+
+  .recommend {
+    background-color: white;
+    height: 200px;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    overflow: auto;
+  }
+
+  .information {
+    font-size: 14px;
+    color: #c7c7c7;
+
+    p {
+      margin-top: 13px;
+    }
+  }
+
+  .user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+
+    > img {
+      width: 50px;
+      border: 1px solid #e6e6e6;
+      border-radius: 50%;
+    }
+
+    div {
+      margin-left: 10px;
+    }
+
+    .user-id {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .user-name {
+      font-size: 13px;
+      color: #8e8e8e;
+      margin-top: 3px;
+    }
+  }
+
+  .story {
+    .story-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      width: 278px;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #262626;
+      background-color: #fff;
+      opacity: 0.9;
+
+      span:first-child {
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+
+    .story-down {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-bottom: 15px;
+
+      .story-contents {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 13px 5px;
+
+        .gradient {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          background: radial-gradient(
+            circle at bottom left,
+            #f58529 20%,
+            #c42d91
+          );
+        }
+
+        img {
+          width: 36px;
+          height: 36px;
+          border: 2px solid #fff;
+          border-radius: 100%;
+        }
+
+        p {
+          margin-left: 7px;
+        }
+
+        .user-id {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .user-name {
+          font-size: 13px;
+          color: #8e8e8e;
+          margin-top: 3px;
+        }
+      }
+    }
+  }
+
+  .recommend {
+    .recommend-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: fixed;
+      width: 278px;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #262626;
+      background-color: #fff;
+      opacity: 0.9;
+
+      span:first-child {
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+    }
+
+    .recommend-down {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      bottom: 40px;
+
+      .recommend-contents {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0 13px 5px;
+
+        &::after {
+          content: "팔로우";
+          margin-left: 33px;
+          color: #0095f6;
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        > img {
+          width: 37px;
+          border-radius: 50%;
+        }
+
+        p {
+          margin-left: 7px;
+        }
+
+        .user-id {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .user-name {
+          margin-top: 3px;
+          font-size: 13px;
+          color: #8e8e8e;
+        }
+      }
+    }
+  }
+}

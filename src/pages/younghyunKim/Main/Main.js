@@ -23,12 +23,23 @@ class MainYoungHyun extends Component {
       });
   }
 
-  handleAdd = plusComment => {
+  handleAdd = (plusComment, feed) => {
+    // console.log(plusComment);
+    // console.log(feed);
     let comments = [
-      ...this.state.feeds.comments,
+      ...feed.comments,
       { id: Date.now(), userName: "0hyun0hyun", comment: plusComment },
     ];
-    this.setState({ comments });
+    let newFeed = { ...feed, comments };
+    let feeds = this.state.feeds.map(item => {
+      if (feed.id === item.id) {
+        return newFeed;
+      } else {
+        return item;
+      }
+    });
+    this.setState({ feeds });
+    console.log(newFeed);
   };
 
   handleDelete = content => {
@@ -49,6 +60,7 @@ class MainYoungHyun extends Component {
                 feed={feed}
                 comments={this.state.feeds.comments}
                 onDelete={this.handleDelete}
+                onAdd={this.handleAdd}
               />
             ))}
           </div>

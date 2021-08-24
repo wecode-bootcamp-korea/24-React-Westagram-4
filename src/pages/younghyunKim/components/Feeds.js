@@ -93,7 +93,7 @@ class Feeds extends Component {
               <span className="time">42분 전</span>
             </div>
 
-            <CommentForm onSubmit={this.handleAdd} />
+            <CommentForm onSubmit={this.props.onAdd} feed={this.props.feed} />
           </div>
         </div>
       </div>

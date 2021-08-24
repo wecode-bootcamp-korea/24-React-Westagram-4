@@ -4,16 +4,21 @@ import "./CommentForm.scss";
 class CommentForm extends Component {
   inputRef = React.createRef();
 
-  pushComment = event => {
-    event.preventDefault();
+  pushComment = (e, feed) => {
+    e.preventDefault();
     const plusComment = this.inputRef.current.value;
-    plusComment && this.props.onSubmit(plusComment);
+    plusComment && this.props.onSubmit(plusComment, feed);
     this.inputRef.current.value = "";
   };
 
   render() {
     return (
-      <form className="comment" onSubmit={this.pushComment}>
+      <form
+        className="comment"
+        onSubmit={e => {
+          this.pushComment(e, this.props.feed);
+        }}
+      >
         <input
           ref={this.inputRef}
           type="text"

@@ -4,25 +4,21 @@ import "./Login.scss";
 
 class LoginHyunJae extends Component {
   state = {
-    id: "",
-    pw: 0,
+    userID: "",
+    userPW: 0,
     isActive: false,
   };
 
-  handleIDInput = e => {
-    const id = e.target.value;
+  handleInput = e => {
+    const { value, className } = e.target;
     this.setState({
-      id: id,
-      isActive: id.includes("@") && this.state.pw.length > 4 ? true : false,
+      [className]: value,
+      isActive:
+        this.state.userID.includes("@") && this.state.userPW.length > 4
+          ? true
+          : false,
     });
-  };
-
-  handlePWInput = e => {
-    const pw = e.target.value;
-    this.setState({
-      pw: pw,
-      isActive: this.state.id.includes("@") && pw.length > 4 ? true : false,
-    });
+    console.log(this.state);
   };
 
   render() {
@@ -37,14 +33,14 @@ class LoginHyunJae extends Component {
             className="userID"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             aria-label="Write account ID"
-            onChange={this.handleIDInput}
+            onChange={this.handleInput}
           />
           <input
             type="password"
             className="userPW"
             placeholder="비밀번호"
             aria-label="Write accout password"
-            onChange={this.handlePWInput}
+            onChange={this.handleInput}
           />
           <Link to="/main-jae">
             <button

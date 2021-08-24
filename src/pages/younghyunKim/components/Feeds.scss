@@ -42,14 +42,12 @@
   }
 
   .feeds-contents {
-    margin: 6px 13px;
-
     .feeds-icons {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin: 7px 0 10px;
+      margin: 7px 13px 10px;
 
       svg {
         cursor: pointer;
@@ -72,6 +70,9 @@
       .save-icon {
         margin-left: 500px;
       }
+    }
+    .allFeeds {
+      margin: 6px 13px;
     }
 
     .feeds-like {

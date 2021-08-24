@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Nav from "../../../components/Nav/Nav";
-import Feeds from "../components/Feeds";
+import AllFeeds from "../components/AllFeeds";
 import "./Main.scss";
 
 class MainYoungHyun extends Component {
@@ -54,16 +54,11 @@ class MainYoungHyun extends Component {
       <div className="main">
         <Nav />
         <div className="margin-value">
-          <div className="feeds-align">
-            {this.state.feeds.map(feed => (
-              <Feeds
-                feed={feed}
-                comments={feed.comments}
-                onDelete={this.handleDelete}
-                onAdd={this.handleAdd}
-              />
-            ))}
-          </div>
+          <AllFeeds
+            feeds={this.state.feeds}
+            onDelete={this.handleDelete}
+            onAdd={this.handleAdd}
+          />
           <div className="main-right">
             <div className="user">
               <img

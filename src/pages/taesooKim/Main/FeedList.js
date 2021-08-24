@@ -23,8 +23,11 @@ export class FeedList extends Component {
               key={feed.id}
               name={feed.userName}
               profile={feed.profileImg}
+              description={feed.description}
               image={feed.feedImg}
+              like={feed.like}
               comment={feed.comment}
+              update={feed.update}
             />
           );
         })}

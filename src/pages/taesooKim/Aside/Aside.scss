@@ -1,7 +1,11 @@
 /* Aside */
 .Aside {
-  width: 300px;
   margin: 100px 0 0 30px;
+  position: relative;
+
+  .main-right {
+    width: 300px;
+  }
 
   .my-profile {
     display: flex;

@@ -10,7 +10,6 @@ class LoginYoungHyun extends Component {
 
   handleInput = e => {
     const { className, value } = e.target;
-    console.log(this.state.id);
     this.setState({ [className]: value }, () => {
       if (this.state.id.indexOf("@") !== -1 && this.state.pw.length > 5) {
         this.setState({ isActive: true });

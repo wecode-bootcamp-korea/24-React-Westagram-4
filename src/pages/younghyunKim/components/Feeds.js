@@ -1,5 +1,6 @@
 import WritingComment from "../components/WritingComment";
 import CommentForm from "../components/CommentForm";
+import "./Feeds.scss";
 
 import React, { Component } from "react";
 
@@ -75,7 +76,6 @@ class Feeds extends Component {
               <div className="feeds-writing">
                 <span className="comment-id">eyesmag </span>
                 <span>
-                  {" "}
                   송원아트센터에서 진행하는 뉴 랜덤 다이버시티 전시 📷
                 </span>
               </div>

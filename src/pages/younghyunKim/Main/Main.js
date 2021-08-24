@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import Nav from "../../../components/Nav/Nav";
-
-// import CommentForm from "../components/CommentForm";
-// import WritingComment from "../components/WritingComment";
 import "./Main.scss";
 import Feeds from "../components/Feeds";
 
@@ -24,8 +21,6 @@ class MainYoungHyun extends Component {
   }
 
   handleAdd = (plusComment, feed) => {
-    // console.log(plusComment);
-    // console.log(feed);
     let comments = [
       ...feed.comments,
       { id: Date.now(), userName: "0hyun0hyun", comment: plusComment },

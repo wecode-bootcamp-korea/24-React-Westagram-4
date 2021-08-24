@@ -1,0 +1,119 @@
+.feeds-setting {
+  width: 655px;
+  border: 1px solid #dbdbdb;
+  margin-right: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 15px;
+
+  .title-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+
+    > img {
+      width: 35px;
+      border: 1px solid #dbdbdb;
+      border-radius: 50%;
+    }
+
+    .dot {
+      width: 18px;
+      margin-left: 490px;
+    }
+
+    span {
+      padding-top: 2px;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 10px;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .feeds-contents {
+    margin: 6px 13px;
+
+    .feeds-icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 7px 0 10px;
+
+      svg {
+        cursor: pointer;
+      }
+
+      svg:not(:first-child) {
+        width: 23px;
+        height: 23px;
+      }
+
+      svg:not(:last-child) {
+        margin-right: 12px;
+      }
+
+      .heart-icon {
+        width: 24.5px;
+        height: 24.5px;
+      }
+
+      .save-icon {
+        margin-left: 500px;
+      }
+    }
+
+    .feeds-like {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 10px 0 12px;
+
+      img {
+        width: 22px;
+        border: 0.5px solid #dbdbdb;
+        border-radius: 50%;
+      }
+
+      span {
+        margin-top: 2.5px;
+        margin-left: 3px;
+        font-size: 14.5px;
+      }
+
+      span .like-bold {
+        font-weight: bold;
+      }
+    }
+
+    .feeds-writing {
+      .comment-id {
+        font-weight: bold;
+      }
+
+      span {
+        font-size: 14.5px;
+      }
+
+      span .comment-id {
+        font-weight: bold;
+      }
+    }
+
+    .time {
+      font-size: 12.5px;
+      color: #8e8e8e;
+    }
+  }
+}

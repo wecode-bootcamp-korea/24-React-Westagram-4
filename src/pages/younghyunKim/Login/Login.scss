@@ -48,14 +48,13 @@
         border-radius: 4px;
         margin-top: 10px;
         font-size: 14px;
-      }
 
-      button.active {
-        background-color: #0095f6;
-        cursor: pointer;
-        font-weight: bold;
+        .active {
+          background-color: #0095f6;
+          cursor: pointer;
+          font-weight: bold;
+        }
       }
-
       input:focus {
         border: 1.2px solid #a8a8a8;
         outline: none;

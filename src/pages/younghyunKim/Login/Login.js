@@ -10,12 +10,12 @@ class LoginYoungHyun extends Component {
 
   handleInput = e => {
     const { className, value } = e.target;
-    this.setState({ [className]: value }, () => {
-      if (this.state.id.indexOf("@") !== -1 && this.state.pw.length > 5) {
-        this.setState({ isActive: true });
-      } else {
-        this.setState({ isActive: false });
-      }
+    this.setState({
+      [className]: value,
+      isActive:
+        this.state.id.indexOf("@") !== -1 && this.state.pw.length > 5
+          ? true
+          : false,
     });
   };
 

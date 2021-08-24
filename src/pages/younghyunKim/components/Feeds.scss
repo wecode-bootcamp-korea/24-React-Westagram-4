@@ -53,15 +53,15 @@
 
       svg {
         cursor: pointer;
-      }
 
-      svg:not(:first-child) {
-        width: 23px;
-        height: 23px;
-      }
+        &:not(:first-child) {
+          width: 23px;
+          height: 23px;
+        }
 
-      svg:not(:last-child) {
-        margin-right: 12px;
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
       }
 
       .heart-icon {
@@ -104,10 +104,9 @@
 
       span {
         font-size: 14.5px;
-      }
-
-      span .comment-id {
-        font-weight: bold;
+        .comment-id {
+          font-weight: bold;
+        }
       }
     }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../../../components/Nav/Nav";
-import "./Main.scss";
 import Feeds from "../components/Feeds";
+import "./Main.scss";
 
 class MainYoungHyun extends Component {
   state = {
@@ -34,14 +34,19 @@ class MainYoungHyun extends Component {
       }
     });
     this.setState({ feeds });
-    console.log(newFeed);
   };
 
-  handleDelete = content => {
-    let comments = this.state.feeds.comments.filter(
-      item => item.id !== content.id
-    );
-    this.setState({ comments });
+  handleDelete = (content, feed) => {
+    let comments = feed.comments.filter(item => item.id !== content.id);
+    let newFeed = { ...feed, comments };
+    let feeds = this.state.feeds.map(item => {
+      if (feed.id === item.id) {
+        return newFeed;
+      } else {
+        return item;
+      }
+    });
+    this.setState({ feeds });
   };
 
   render() {
@@ -53,7 +58,7 @@ class MainYoungHyun extends Component {
             {this.state.feeds.map(feed => (
               <Feeds
                 feed={feed}
-                comments={this.state.feeds.comments}
+                comments={feed.comments}
                 onDelete={this.handleDelete}
                 onAdd={this.handleAdd}
               />

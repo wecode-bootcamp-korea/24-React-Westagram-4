@@ -6,7 +6,7 @@ import React, { Component } from "react";
 
 class Feeds extends Component {
   render() {
-    const { comments, onDelete } = this.props.feed;
+    const { comments, onDelete, feed, onAdd } = this.props;
     return (
       <div className="feeds-setting">
         <div>
@@ -82,6 +82,7 @@ class Feeds extends Component {
               <div>
                 {comments.map(content => (
                   <WritingComment
+                    feed={feed}
                     content={content}
                     comment={content.comment}
                     username={content.userName}
@@ -93,7 +94,7 @@ class Feeds extends Component {
               <span className="time">42분 전</span>
             </div>
 
-            <CommentForm onSubmit={this.props.onAdd} feed={this.props.feed} />
+            <CommentForm onSubmit={onAdd} feed={this.props.feed} />
           </div>
         </div>
       </div>

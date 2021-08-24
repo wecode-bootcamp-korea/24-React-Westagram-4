@@ -5,7 +5,7 @@ import FeedList from "./FeedList";
 import "./Main.scss";
 import "../../../styles/common.scss";
 
-class Main extends React.Component {
+class MainTaesoo extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -60,4 +60,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default MainTaesoo;

@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import "./Login.scss";
 import "../../../styles/common.scss";
 
-class Login extends React.Component {
+class LoginTaeSoo extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -49,6 +49,7 @@ class Login extends React.Component {
               className={`btn ${
                 IdVal.indexOf("@") !== -1 && PwVal.length >= 5 ? "active" : ""
               }`}
+              onClick={this.goToMain}
             >
               <span>로그인</span>
             </button>
@@ -60,4 +61,4 @@ class Login extends React.Component {
   }
 }
 
-export default withRouter(Login);
+export default withRouter(LoginTaeSoo);

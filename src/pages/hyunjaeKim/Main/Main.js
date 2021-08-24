@@ -21,13 +21,21 @@ class MainHyunJae extends Component {
       });
   }
 
-  // handleAdd = comment => {
-  //   const commentList = [
-  //     ...this.state.commentList,
-  //     { id: Date.now(), userName: "hyun__jjae", content: comment },
-  //   ];
-  //   this.setState({ commentList });
-  // };
+  handleAdd = (comment, content) => {
+    const commentList = [
+      ...content.comments,
+      { id: Date.now(), userName: "hyun__jjae", comment },
+    ];
+    const newFeed = { ...content, comments: commentList };
+    const feeds = this.state.feeds.map(item => {
+      if (item.id === content.id) {
+        return newFeed;
+      }
+      return item;
+    });
+    console.log(feeds);
+    this.setState({ feeds });
+  };
 
   render() {
     return (

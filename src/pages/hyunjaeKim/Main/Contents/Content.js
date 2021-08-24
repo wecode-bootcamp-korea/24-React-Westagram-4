@@ -4,6 +4,7 @@ import CommentForm from "../Replies/Comment";
 
 export default class Content extends Component {
   render() {
+    const { content, onSubmit } = this.props;
     return (
       <article className="content">
         <header className="contentHeader content-box">
@@ -60,15 +61,12 @@ export default class Content extends Component {
               <a href="#" className="moreLink">
                 View all 9 comments
               </a>
-              <Replies
-                className="replies"
-                content={this.props.content.comments}
-              />
+              <Replies className="replies" content={content.comments} />
             </div>
             <div className="pastDay">2 HOURS AGO</div>
           </div>
         </div>
-        <CommentForm onSubmit={this.props.onSubmit} />
+        <CommentForm onSubmit={onSubmit} content={content} />
       </article>
     );
   }

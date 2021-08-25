@@ -4,21 +4,40 @@ import "./Login.scss";
 
 class LoginHyunJae extends Component {
   state = {
-    userID: "",
-    userPW: 0,
-    isActive: false,
+    email: "",
+    password: "",
   };
 
-  handleInput = e => {
-    const { value, className } = e.target;
-    this.setState({
-      [className]: value,
-      isActive:
-        this.state.userID.includes("@") && this.state.userPW.length > 4
-          ? true
-          : false,
-    });
-    console.log(this.state);
+  saveData = data => {
+    localStorage.setItem("TOKEN", data.TOKEN);
+  };
+
+  handleLogin = () => {
+    fetch("http://10.58.0.45:8000/users/login", {
+      method: "POST",
+      body: JSON.stringify({
+        ...this.state,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.TOKEN) {
+          this.saveData(data);
+          this.props.history.push("/main-jae");
+        } else {
+          alert("회원가입을 해주세요!");
+        }
+      });
+  };
+
+  handleIDInput = e => {
+    const { value } = e.target;
+    this.setState({ ...this.state, email: value });
+  };
+
+  handlePWInput = e => {
+    const { value } = e.target;
+    this.setState({ ...this.state, password: value });
   };
 
   render() {
@@ -31,29 +50,28 @@ class LoginHyunJae extends Component {
           <input
             type="email"
             className="userID"
-            placeholder="전화번호, 사용자 이름 또는 이메일"
+            placeholder="이메일을 입력해주세요"
             aria-label="Write account ID"
-            onChange={this.handleInput}
+            onChange={this.handleIDInput}
           />
           <input
             type="password"
             className="userPW"
             placeholder="비밀번호"
             aria-label="Write accout password"
-            onChange={this.handleInput}
+            onChange={this.handlePWInput}
           />
-          <Link to="/main-jae">
-            <button
-              type="button"
-              className={this.state.isActive ? "loginBtn active" : "loginBtn"}
-              aria-label="login"
-            >
-              로그인
-            </button>
-          </Link>
+          <button
+            type="button"
+            className={this.state.isActive ? "loginBtn active" : "loginBtn"}
+            aria-label="login"
+            onClick={this.handleLogin}
+          >
+            로그인
+          </button>
         </form>
         <div className="helpLink" aria-label="help desk">
-          <Link to="/main-jae">비밀번호를 잊으셨나요?</Link>
+          <Link to="/account-jae">계정을 추가해보세요</Link>
         </div>
       </div>
     );

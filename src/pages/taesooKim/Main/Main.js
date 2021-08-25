@@ -25,12 +25,6 @@ class MainTaesoo extends React.Component {
       });
   }
 
-  // getValue = e => {
-  //   this.setState({
-  //     value: e.target.value,
-  //   });
-  // };
-
   // addComment = e => {
   //   e.preventDefault();
   //   this.setState({

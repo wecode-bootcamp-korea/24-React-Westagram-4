@@ -7,26 +7,37 @@ export class Feed extends Component {
   constructor() {
     super();
     this.state = {
+      value: "",
+      comment: [],
       isClicked: false,
     };
   }
 
+  getValue = e => {
+    this.setState({
+      value: e.target.value,
+    });
+  };
+
+  handleAdd = e => {
+    e.preventDefault();
+    const newComment = {
+      id: Date.now(),
+      userName: "orosy.ts",
+      content: this.state.value,
+      isUser: true,
+    };
+    const comment = [...this.state.comment, newComment];
+    this.setState({ comment, value: "" });
+  };
+
   handleClick = () => {
     this.setState({ isClicked: !this.state.isClicked });
   };
+
   render() {
-    const {
-      name,
-      profile,
-      description,
-      image,
-      value,
-      addComment,
-      getValue,
-      comment,
-      like,
-      update,
-    } = this.props;
+    const { name, profile, description, image, value, comment, like, update } =
+      this.props;
     return (
       <div className="feeds-each">
         <div className="feeds-profile">
@@ -71,18 +82,18 @@ export class Feed extends Component {
         </div>
         <div className="feed-comment">
           <ul className="comments">
-            <CommentList comment={comment} />
+            <CommentList comment={comment} newComment={this.state.comment} />
           </ul>
         </div>
         <p className="post-time">{update}</p>
         <div className="write-comments">
-          <form className="comment-form" onSubmit={addComment}>
+          <form className="comment-form" onSubmit={this.handleAdd}>
             <input
               className="comment-post"
               type="text"
               placeholder="댓글 달기..."
-              value={value}
-              onChange={getValue}
+              value={this.state.value}
+              onChange={this.getValue}
             />
             <button className={`btn-post ${value ? "active" : ""}`}>
               게시

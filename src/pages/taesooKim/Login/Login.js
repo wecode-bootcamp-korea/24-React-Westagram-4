@@ -19,6 +19,19 @@ class LoginTaeSoo extends React.Component {
       : this.setState({ disabled: true });
   };
 
+  handleLogin = () => {
+    console.log("salkdfj");
+    fetch("http://10.58.7.180:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(result));
+  };
+
   handleInput = e => {
     const { value, id } = e.target;
     this.setState({
@@ -58,8 +71,9 @@ class LoginTaeSoo extends React.Component {
               className={`btn ${
                 id.indexOf("@") !== -1 && pw.length >= 5 ? "active" : ""
               }`}
-              onClick={this.goToMain}
+              // onClick={this.goToMain}
               disabled={disabled}
+              onClick={this.handleLogin}
             >
               <span>로그인</span>
             </button>

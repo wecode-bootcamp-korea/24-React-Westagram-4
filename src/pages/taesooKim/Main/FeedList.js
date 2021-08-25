@@ -20,6 +20,7 @@ export class FeedList extends Component {
         {feedList.map(feed => {
           return (
             <Feed
+              feed={feed}
               key={feed.id}
               name={feed.userName}
               profile={feed.profileImg}

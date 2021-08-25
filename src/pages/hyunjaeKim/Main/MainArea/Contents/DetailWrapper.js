@@ -3,6 +3,7 @@ import Replies from "../Contents/Replies/Replies";
 
 export default class DetailWrapper extends Component {
   render() {
+    const { content } = this.props;
     return (
       <div className="detailWrapper content-box">
         <div className="contentDetail">
@@ -36,7 +37,9 @@ export default class DetailWrapper extends Component {
             </a>
             <Replies
               className="replies"
-              content={this.props.content.comments}
+              content={content.comments}
+              feed={content}
+              onClick={this.props.onClick}
             />
           </div>
           <div className="pastDay">2 HOURS AGO</div>

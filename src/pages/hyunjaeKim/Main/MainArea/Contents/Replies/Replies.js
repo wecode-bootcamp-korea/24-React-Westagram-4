@@ -8,6 +8,7 @@ export default class Replies extends Component {
         {this.props.content.map(reply => (
           <Reply
             reply={reply}
+            onClick={this.props.onClick}
             userName={reply.userName}
             content={reply.comment}
           />

@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 
 export default class Reply extends Component {
+  onClick = () => {
+    this.props.onClick(this.props.reply);
+  };
+
   render() {
     const { userName, content } = this.props;
     return (
-      <li className="reply">
+      <li className="reply" onClick={this.onClick}>
         <div className="replyDetail">
           <strong>
             <a href="#" className="userID">

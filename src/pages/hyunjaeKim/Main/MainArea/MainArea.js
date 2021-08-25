@@ -34,11 +34,27 @@ export default class MainArea extends Component {
     this.setState({ feeds });
   };
 
+  handleDelete = (reply, feed) => {
+    const commentList = feed.comments.filter(item => item.id !== reply.id);
+    const newFeed = { ...feed, comments: commentList };
+    const feeds = this.state.feeds.map(item => {
+      if (item.id === feed.id) {
+        return newFeed;
+      }
+      return item;
+    });
+    this.setState({ feeds });
+  };
+
   render() {
     return (
       <div className="mainArea">
         <StoryFeed />
-        <Contents feeds={this.state.feeds} onSubmit={this.handleAdd} />
+        <Contents
+          feeds={this.state.feeds}
+          onSubmit={this.handleAdd}
+          onDelete={this.handleDelete}
+        />
       </div>
     );
   }

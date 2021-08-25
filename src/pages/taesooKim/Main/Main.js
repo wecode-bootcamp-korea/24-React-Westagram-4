@@ -9,7 +9,6 @@ class MainTaesoo extends React.Component {
   constructor() {
     super();
     this.state = {
-      value: "",
       feedList: [],
     };
   }
@@ -26,19 +25,19 @@ class MainTaesoo extends React.Component {
       });
   }
 
-  getValue = e => {
-    this.setState({
-      value: e.target.value,
-    });
-  };
+  // getValue = e => {
+  //   this.setState({
+  //     value: e.target.value,
+  //   });
+  // };
 
-  addComment = e => {
-    e.preventDefault();
-    this.setState({
-      commentList: this.state.commentList.concat([this.state.value]),
-      value: "",
-    });
-  };
+  // addComment = e => {
+  //   e.preventDefault();
+  //   this.setState({
+  //     commentList: this.state.commentList.concat([this.state.value]),
+  //     value: "",
+  //   });
+  // };
 
   render() {
     return (
@@ -46,12 +45,7 @@ class MainTaesoo extends React.Component {
         <Nav />
         <main className="main">
           <section className="feeds">
-            <FeedList
-              value={this.state.value}
-              feedList={this.state.feedList}
-              getValue={this.getValue}
-              addComment={this.addComment}
-            />
+            <FeedList feedList={this.state.feedList} />
           </section>
           <Aside />
         </main>

@@ -57,9 +57,10 @@
       border: none;
       border-radius: 3px;
       background-color: var(--color-light-blue);
-      cursor: pointer;
+
       &.active {
         background-color: var(--color-regular-blue);
+        cursor: pointer;
       }
       span {
         color: var(--color-white);

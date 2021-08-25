@@ -7,53 +7,63 @@ class LoginTaeSoo extends React.Component {
   constructor() {
     super();
     this.state = {
-      IdVal: "",
-      PwVal: "",
+      id: "",
+      pw: "",
+      disabled: true,
     };
   }
 
-  handleIdInput = e => {
-    this.setState({ IdVal: e.target.value });
+  activeLogin = () => {
+    this.state.id.indexOf("@") > 0 && this.state.pw.length >= 5
+      ? this.setState({ disabled: false })
+      : this.setState({ disabled: true });
   };
 
-  handlePwInput = e => {
-    this.setState({ PwVal: e.target.value });
+  handleInput = e => {
+    const { value, id } = e.target;
+    this.setState({
+      [id]: value,
+    });
+    this.activeLogin();
   };
 
   goToMain = () => {
-    this.props.history.push("/main-soo");
+    if (!this.state.disabled) {
+      this.props.history.push("/main-soo");
+    }
   };
 
   render() {
-    const { IdVal, PwVal } = this.state;
+    const { id, pw, disabled } = this.state;
     return (
       <section className="login">
         <h1 className="title">Westagram</h1>
         <div className="login-container">
-          <form id="login-form">
+          <div id="login-form">
             <input
+              id="id"
               className="username"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={IdVal}
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
             />
             <input
+              id="pw"
               className="password"
               type="password"
               placeholder="비밀번호"
-              value={PwVal}
-              onChange={this.handlePwInput}
+              onChange={this.handleInput}
             />
             <button
               className={`btn ${
-                IdVal.indexOf("@") !== -1 && PwVal.length >= 5 ? "active" : ""
+                id.indexOf("@") !== -1 && pw.length >= 5 ? "active" : ""
               }`}
               onClick={this.goToMain}
+              disabled={disabled}
             >
               <span>로그인</span>
             </button>
-          </form>
+          </div>
         </div>
         <p>비밀번호를 잊으셨나요?</p>
       </section>

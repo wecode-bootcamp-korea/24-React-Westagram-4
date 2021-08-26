@@ -24,15 +24,18 @@ export class Feed extends Component {
   };
 
   handleAdd = e => {
+    if (this.state.value) {
+      e.preventDefault();
+      const newComment = {
+        id: Date.now(),
+        userName: "orosy.ts",
+        content: this.state.value,
+        isUser: true,
+      };
+      const comment = [...this.state.comment, newComment];
+      this.setState({ comment, value: "" });
+    }
     e.preventDefault();
-    const newComment = {
-      id: Date.now(),
-      userName: "orosy.ts",
-      content: this.state.value,
-      isUser: true,
-    };
-    const comment = [...this.state.comment, newComment];
-    this.setState({ comment, value: "" });
   };
 
   // handleDelete = e => {
@@ -49,7 +52,6 @@ export class Feed extends Component {
   render() {
     const { value, isClicked, comment } = this.state;
     const { name, profile, description, image, like, update } = this.props;
-    console.log(this.state.comment);
     return (
       <div className="feeds-each">
         <div className="feeds-profile">

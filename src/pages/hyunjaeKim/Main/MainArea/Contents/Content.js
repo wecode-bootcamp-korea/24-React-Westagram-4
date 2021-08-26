@@ -9,7 +9,7 @@ export default class Content extends Component {
   state = {};
 
   componentDidMount() {
-    this.setState(this.props);
+    this.setState(this.props.content);
   }
   //optional) 위의 것을 사용하면, comment가 있을 때에만 map을 돌릴 수 있도록 코멘트&&코멘트.map()
 
@@ -18,7 +18,7 @@ export default class Content extends Component {
       ...this.state.comments,
       { id: Date.now(), userName: "hyun__jjae", comment: reply, isUser: true },
     ];
-    this.setState({ comments }, () => console.log(this.state));
+    this.setState({ comments });
   };
 
   handleDelete = reply => {
@@ -27,16 +27,12 @@ export default class Content extends Component {
   };
 
   render() {
-    console.log(this.state.content);
     return (
       <article className="content">
         <ContentHeader />
         <MainContents />
-        {this.state.content && (
-          <DetailWrapper
-            content={this.state.content}
-            onDelete={this.handleDelete}
-          />
+        {this.state.comments && (
+          <DetailWrapper content={this.state} onDelete={this.handleDelete} />
         )}
         <CommentForm onSubmit={this.handleAdd} />
       </article>

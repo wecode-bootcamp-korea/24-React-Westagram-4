@@ -7,7 +7,7 @@ export default class DetailWrapper extends Component {
   };
 
   render() {
-    const { content } = this.props;
+    console.log(this.props.content);
     return (
       <div className="detailWrapper content-box">
         <div className="contentDetail">
@@ -41,7 +41,7 @@ export default class DetailWrapper extends Component {
             </a>
             <Replies
               className="replies"
-              content={content.comments}
+              content={this.props.content}
               onDelete={this.handleDelete}
             />
           </div>

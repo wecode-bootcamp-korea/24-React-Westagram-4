@@ -7,9 +7,10 @@ export default class Replies extends Component {
   };
 
   render() {
+    const { comments } = this.props.content;
     return (
       <ul>
-        {this.props.content.map(reply => (
+        {comments.map(reply => (
           <Reply
             reply={reply}
             onDelete={this.handleDelete}

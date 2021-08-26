@@ -1,12 +1,34 @@
+import React, { Component } from "react";
 import WritingComment from "../components/WritingComment";
 import CommentForm from "../components/CommentForm";
 import "./Feeds.scss";
 
-import React, { Component } from "react";
-
 class Feeds extends Component {
+  state = {};
+
+  componentDidMount = () => {
+    this.setState(this.props.feed);
+  };
+
+  handleAdd = plusComment => {
+    const comment = {
+      id: Date.now(),
+      userName: "0hyun0hyun",
+      comment: plusComment,
+      isUser: false,
+    };
+    // 비어있는 state에 input value로 넘겨받은 plusComment를 comment에 넣어서 setState를 하게 된다.
+    const comments = [...this.state.comments, comment];
+    this.setState({ comments });
+  };
+
+  handleDelete = content => {
+    const comments = this.state.comments.filter(item => content.id !== item.id);
+    this.setState({ comments });
+  };
+
   render() {
-    const { comments, onDelete, feed, onAdd } = this.props;
+    const { feed } = this.props;
     return (
       <div className="feeds-setting">
         <div>
@@ -80,21 +102,25 @@ class Feeds extends Component {
                 </span>
               </div>
               <div>
-                {comments.map(content => (
-                  <WritingComment
-                    feed={feed}
-                    content={content}
-                    comment={content.comment}
-                    username={content.userName}
-                    onDelete={onDelete}
-                    key={content.id}
-                  />
-                ))}
+                {/* state가 처음에 {} 빈 객체였기 때문에 &&는 false를 발견하면
+                반환하고 뒤로 넘어가게 된다. 그런데 랜더링이 끝나고 디드마운트
+                안에 있는 setState로 리랜더링이 되어지고 다시 맵을 돌리게 된다. */}
+                {this.state.comments &&
+                  this.state.comments.map(content => (
+                    <WritingComment
+                      feed={feed}
+                      content={content}
+                      comment={content.comment}
+                      username={content.userName}
+                      onDelete={this.handleDelete}
+                      key={content.id}
+                    />
+                  ))}
               </div>
               <span className="time">42분 전</span>
             </div>
 
-            <CommentForm onSubmit={onAdd} feed={this.props.feed} />
+            <CommentForm onAdd={this.handleAdd} />
           </div>
         </div>
       </div>

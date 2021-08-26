@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./WritingComment.scss";
 
 class WritingComment extends Component {
-  handleDelete = (e, feed) => {
-    this.props.onDelete(this.props.content, feed);
+  handleDelete = e => {
+    this.props.onDelete(this.props.content);
   };
 
   render() {
@@ -14,11 +14,7 @@ class WritingComment extends Component {
           <span className="comment-id">{username}</span>
           <span className="comment-writing">{comment}</span>
         </div>
-        <button
-          onClick={e => {
-            this.handleDelete(e, this.props.feed);
-          }}
-        >
+        <button onClick={this.handleDelete}>
           <i className="far fa-times-circle"></i>
         </button>
         <button>

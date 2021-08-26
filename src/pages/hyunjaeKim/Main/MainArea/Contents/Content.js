@@ -10,7 +10,6 @@ export default class Content extends Component {
   componentDidMount() {
     this.setState(this.props.content);
   }
-  //optional) 위의 것을 사용하면, comment가 있을 때에만 map을 돌릴 수 있도록 코멘트&&코멘트.map()
 
   handleAdd = reply => {
     const comments = [

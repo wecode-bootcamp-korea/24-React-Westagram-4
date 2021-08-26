@@ -3,6 +3,7 @@ import Replies from "../Contents/Replies/Replies";
 
 export default class DetailWrapper extends Component {
   state = {
+    likes: 1515,
     isRed: false,
   };
 
@@ -11,7 +12,15 @@ export default class DetailWrapper extends Component {
   };
 
   handleBtn = () => {
-    this.setState({ isRed: !this.state.isRed });
+    this.setState({ ...this.state, isRed: !this.state.isRed }, () => {
+      this.handleIncrement();
+    });
+  };
+
+  handleIncrement = () => {
+    this.state.isRed === true
+      ? this.setState({ ...this.state, likes: this.state.likes + 1 })
+      : this.setState({ ...this.state, likes: this.state.likes - 1 });
   };
 
   render() {
@@ -33,7 +42,7 @@ export default class DetailWrapper extends Component {
             <button type="button" className="icon bookmark"></button>
           </section>
           <div className="likes userID">
-            <strong className="likedNumber">1,515</strong> likes
+            <strong className="likedNumber">{this.state.likes}</strong> likes
           </div>
           <div className="writterComment">
             <strong>

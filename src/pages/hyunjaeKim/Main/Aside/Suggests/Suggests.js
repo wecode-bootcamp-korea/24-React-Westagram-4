@@ -23,7 +23,7 @@ export default class Suggests extends Component {
         </div>
         <div className="suggestedProfiles">
           {this.state.suggests.map(user => (
-            <Suggest user={user} />
+            <Suggest user={user} key={user.id} />
           ))}
         </div>
       </div>

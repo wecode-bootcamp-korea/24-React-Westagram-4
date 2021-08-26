@@ -20,8 +20,8 @@ export default class StoryFeed extends Component {
     return (
       <section className="storyFeed">
         <ul className="stories content-box">
-          {users.map(user => (
-            <Story user={user} />
+          {users.map((user, idx) => (
+            <Story user={user} key={idx} />
           ))}
         </ul>
         <button className="showNext icon"></button>

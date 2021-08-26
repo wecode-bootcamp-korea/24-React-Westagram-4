@@ -15,6 +15,7 @@ export default class Replies extends Component {
             onDelete={this.handleDelete}
             userName={reply.userName}
             comment={reply.comment}
+            key={reply.id}
           />
         ))}
       </ul>

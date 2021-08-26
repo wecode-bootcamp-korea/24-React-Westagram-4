@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class SurviceDetails extends Component {
+export default class ServiceDetails extends Component {
   state = {
     services: [
       "About",
@@ -22,8 +22,8 @@ export default class SurviceDetails extends Component {
       <div className="serviceDetails">
         <div className="serviceLinks">
           <ul className="serviceLink">
-            {this.state.services.map(item => (
-              <li>
+            {this.state.services.map((item, idx) => (
+              <li key={idx}>
                 <a href="#">{item}</a>
               </li>
             ))}

@@ -14,7 +14,7 @@ export default class DetailWrapper extends Component {
           <section className="reactionTool">
             <div className="giveReaction">
               <div className="icon heartBtn">
-                <i className="far fa-heart"></i>
+                <i className="far fa-heart" />
               </div>
               <a href="#" className="icon comment"></a>
               <a href="#" className="icon dmBtn"></a>

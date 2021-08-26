@@ -5,7 +5,6 @@ import MainContents from "./MainContents";
 import DetailWrapper from "./DetailWrapper";
 
 export default class Content extends Component {
-  // state = { ...this.props.content };
   state = {};
 
   componentDidMount() {

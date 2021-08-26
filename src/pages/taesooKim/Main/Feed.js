@@ -31,12 +31,20 @@ export class Feed extends Component {
     this.setState({ comment, value: "" });
   };
 
+  // handleDelete = e => {
+  //   const filteredComments = this.props.commentList.filter(
+  //     comment => comment.id !== Number(e.target.parentNode.parentNode.id)
+  //   );
+  //   this.setState({ comment: filteredComments });
+  // };
+
   handleClick = () => {
     this.setState({ isClicked: !this.state.isClicked });
   };
 
   render() {
-    const { name, profile, description, image, value, comment, like, update } =
+    const { value, isClicked, comment } = this.state;
+    const { name, profile, description, image, commentList, like, update } =
       this.props;
     return (
       <div className="feeds-each">
@@ -49,10 +57,7 @@ export class Feed extends Component {
         </div>
         <img className="feeds-image" src={image} alt="cookies" />
         <div className="reaction">
-          <BtnLike
-            isClicked={this.state.isClicked}
-            handleClick={this.handleClick}
-          />
+          <BtnLike isClicked={isClicked} handleClick={this.handleClick} />
           <div className="plane-icon">
             <i className="far fa-comment"></i>
           </div>
@@ -82,7 +87,11 @@ export class Feed extends Component {
         </div>
         <div className="feed-comment">
           <ul className="comments">
-            <CommentList comment={comment} newComment={this.state.comment} />
+            <CommentList
+              commentList={commentList}
+              newComment={comment}
+              // deleteComment={this.handleDelete}
+            />
           </ul>
         </div>
         <p className="post-time">{update}</p>
@@ -92,7 +101,7 @@ export class Feed extends Component {
               className="comment-post"
               type="text"
               placeholder="댓글 달기..."
-              value={this.state.value}
+              value={value}
               onChange={this.getValue}
             />
             <button className={`btn-post ${value ? "active" : ""}`}>

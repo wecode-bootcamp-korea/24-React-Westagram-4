@@ -1,17 +1,30 @@
 import React, { Component } from "react";
+import BtnLike from "./BtnLike";
 
 export class Comment extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isClicked: false,
+    };
+  }
+
+  handleClick = () => {
+    this.setState({ isClicked: !this.state.isClicked });
+  };
+
   render() {
-    const { name, comment } = this.props;
+    const { name, content, id, deleteComment } = this.props;
     return (
-      <li>
+      <li id={id}>
         <span>{name}</span>
-        <p>{comment}</p>
-        <div className="heart-icon">
-          <i className="far fa-heart"></i>
-        </div>
+        <p>{content}</p>
+        <BtnLike
+          isClicked={this.state.isClicked}
+          handleClick={this.handleClick}
+        />
         <div className="trash-icon">
-          <i className="far fa-trash-alt"></i>
+          <i className="far fa-trash-alt" onClick={deleteComment}></i>
         </div>
       </li>
     );

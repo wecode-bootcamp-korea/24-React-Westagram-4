@@ -25,14 +25,6 @@ class MainTaesoo extends React.Component {
       });
   }
 
-  // addComment = e => {
-  //   e.preventDefault();
-  //   this.setState({
-  //     commentList: this.state.commentList.concat([this.state.value]),
-  //     value: "",
-  //   });
-  // };
-
   render() {
     return (
       <section className="section-main">

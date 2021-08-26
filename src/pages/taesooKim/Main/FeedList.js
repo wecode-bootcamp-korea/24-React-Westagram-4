@@ -27,7 +27,7 @@ export class FeedList extends Component {
               description={feed.description}
               image={feed.feedImg}
               like={feed.like}
-              comment={feed.comment}
+              commentList={feed.commentList}
               update={feed.update}
             />
           );

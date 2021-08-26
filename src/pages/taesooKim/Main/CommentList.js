@@ -3,25 +3,28 @@ import Comment from "./Comment";
 
 export class CommentList extends Component {
   render() {
-    const { comment, newComment } = this.props;
+    const { commentList, newComment } = this.props;
     return (
       <div>
-        {comment.map(comment => {
+        {commentList.map(comment => {
           return (
             <Comment
+              comment={comment}
               key={comment.id}
+              id={comment.id}
               name={comment.userName}
-              comment={comment.content}
+              content={comment.content}
             />
           );
         })}
         {newComment.map(comment => {
           return (
             <Comment
+              comment={comment}
               key={comment.id}
+              id={comment.id}
               name={comment.userName}
-              comment={comment.content}
-              isUser={comment.isUser}
+              content={comment.content}
             />
           );
         })}

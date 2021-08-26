@@ -14,13 +14,12 @@ class LoginTaeSoo extends React.Component {
   }
 
   activeLogin = () => {
-    this.state.id.indexOf("@") > 0 && this.state.pw.length >= 5
+    this.state.id.indexOf("@") !== -1 && this.state.pw.length >= 5
       ? this.setState({ disabled: false })
       : this.setState({ disabled: true });
   };
 
   handleLogin = () => {
-    console.log("salkdfj");
     fetch("http://10.58.7.180:8000/user/signin", {
       method: "POST",
       body: JSON.stringify({
@@ -71,7 +70,6 @@ class LoginTaeSoo extends React.Component {
               className={`btn ${
                 id.indexOf("@") !== -1 && pw.length >= 5 ? "active" : ""
               }`}
-              // onClick={this.goToMain}
               disabled={disabled}
               onClick={this.handleLogin}
             >

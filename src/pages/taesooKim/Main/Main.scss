@@ -135,18 +135,18 @@
               display: flex;
               margin-bottom: 4px;
 
-              .heart-icon,
-              .trash-icon {
+              i {
                 position: absolute;
                 right: 40px;
                 font-size: 12px;
                 color: var(--color-light-gray);
                 cursor: pointer;
-              }
-
-              .trash-icon {
-                position: absolute;
-                right: 20px;
+                &.fas.fa-heart {
+                  color: var(--color-red);
+                }
+                &.far.fa-trash-alt {
+                  right: 20px;
+                }
               }
 
               span {

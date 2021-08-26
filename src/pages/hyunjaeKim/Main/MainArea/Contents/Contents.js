@@ -23,7 +23,7 @@ export default class Contents extends Component {
     return (
       <section className="contents">
         {feeds.map(content => (
-          <Content content={content} />
+          <Content content={content} key={content.id} />
         ))}
       </section>
     );

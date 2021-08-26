@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 export default class Reply extends Component {
   onClick = () => {
-    this.props.onClick(this.props.reply);
+    this.props.onDelete(this.props.reply);
   };
 
   render() {
-    const { userName, content } = this.props;
+    const { userName, comment } = this.props;
     return (
       <li className="reply" onClick={this.onClick}>
         <div className="replyDetail">
@@ -16,7 +16,7 @@ export default class Reply extends Component {
             </a>
           </strong>
           <a href="#" className="comment hashtag">
-            {content}
+            {comment}
           </a>
         </div>
         <div className="icon heartBtn small_icon">

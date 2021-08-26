@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import Replies from "../Contents/Replies/Replies";
 
 export default class DetailWrapper extends Component {
+  handleDelete = reply => {
+    this.props.onDelete(reply);
+  };
+
   render() {
     const { content } = this.props;
     return (
@@ -38,8 +42,7 @@ export default class DetailWrapper extends Component {
             <Replies
               className="replies"
               content={content.comments}
-              feed={content}
-              onClick={this.props.onClick}
+              onDelete={this.handleDelete}
             />
           </div>
           <div className="pastDay">2 HOURS AGO</div>

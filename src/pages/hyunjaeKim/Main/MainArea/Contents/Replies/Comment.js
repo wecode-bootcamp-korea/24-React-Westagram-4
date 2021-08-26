@@ -8,10 +8,10 @@ export default class CommentForm extends Component {
   formRef = React.createRef();
   inputRef = React.createRef();
 
-  onSubmit = (event, content) => {
+  onSubmit = event => {
     event.preventDefault();
     const comment = this.inputRef.current.value;
-    comment && this.props.onSubmit(comment, content);
+    comment && this.props.onSubmit(comment);
     this.formRef.current.reset();
   };
 
@@ -25,9 +25,7 @@ export default class CommentForm extends Component {
       <form
         ref={this.formRef}
         className="commentForm content-box"
-        onSubmit={e => {
-          this.onSubmit(e, this.props.content);
-        }}
+        onSubmit={this.onSubmit}
       >
         <button className="icon emoji" type="button"></button>
         <input

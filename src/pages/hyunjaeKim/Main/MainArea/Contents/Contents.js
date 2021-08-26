@@ -2,20 +2,28 @@ import React, { Component } from "react";
 import Content from "./Content";
 
 export default class Contents extends Component {
-  handleDelete = (reply, feed) => {
-    this.props.onDelete(reply, feed);
+  state = {
+    feeds: [],
   };
 
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feeds: data,
+        });
+      });
+  }
+
   render() {
-    const { feeds, onSubmit } = this.props;
+    const { feeds } = this.state;
     return (
       <section className="contents">
         {feeds.map(content => (
-          <Content
-            content={content}
-            onSubmit={onSubmit}
-            onDelete={this.handleDelete}
-          />
+          <Content content={content} />
         ))}
       </section>
     );

@@ -2,19 +2,30 @@ import React, { Component } from "react";
 import Replies from "../Contents/Replies/Replies";
 
 export default class DetailWrapper extends Component {
+  state = {
+    isRed: false,
+  };
+
   handleDelete = reply => {
     this.props.onDelete(reply);
   };
 
+  handleBtn = () => {
+    this.setState({ isRed: !this.state.isRed });
+  };
+
   render() {
-    console.log(this.props.content);
     return (
       <div className="detailWrapper content-box">
         <div className="contentDetail">
           <section className="reactionTool">
             <div className="giveReaction">
-              <div className="icon heartBtn">
-                <i className="far fa-heart" />
+              <div className="icon heartBtn" onClick={this.handleBtn}>
+                <i
+                  className={
+                    this.state.isRed ? "fas fa-heart" : "far fa-heart "
+                  }
+                />
               </div>
               <a href="#" className="icon comment"></a>
               <a href="#" className="icon dmBtn"></a>

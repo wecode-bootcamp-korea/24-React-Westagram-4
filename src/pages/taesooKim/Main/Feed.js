@@ -38,12 +38,12 @@ export class Feed extends Component {
     e.preventDefault();
   };
 
-  // handleDelete = e => {
-  //   const filteredComments = this.props.commentList.filter(
-  //     comment => comment.id !== id
-  //   );
-  //   this.setState({ comment: filteredComments });
-  // };
+  handleDelete = id => {
+    const filteredComments = this.state.comment.filter(
+      comment => comment.id !== id
+    );
+    this.setState({ comment: filteredComments });
+  };
 
   handleClick = () => {
     this.setState({ isClicked: !this.state.isClicked });
@@ -93,10 +93,7 @@ export class Feed extends Component {
         </div>
         <div className="feed-comment">
           <ul className="comments">
-            <CommentList
-              comment={comment}
-              // deleteComment={this.handleDelete}
-            />
+            <CommentList comment={comment} deleteComment={this.handleDelete} />
           </ul>
         </div>
         <p className="post-time">{update}</p>

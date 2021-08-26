@@ -13,6 +13,10 @@ export class Feed extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({ comment: this.props.commentList });
+  }
+
   getValue = e => {
     this.setState({
       value: e.target.value,
@@ -33,7 +37,7 @@ export class Feed extends Component {
 
   // handleDelete = e => {
   //   const filteredComments = this.props.commentList.filter(
-  //     comment => comment.id !== Number(e.target.parentNode.parentNode.id)
+  //     comment => comment.id !== id
   //   );
   //   this.setState({ comment: filteredComments });
   // };
@@ -44,8 +48,8 @@ export class Feed extends Component {
 
   render() {
     const { value, isClicked, comment } = this.state;
-    const { name, profile, description, image, commentList, like, update } =
-      this.props;
+    const { name, profile, description, image, like, update } = this.props;
+    console.log(this.state.comment);
     return (
       <div className="feeds-each">
         <div className="feeds-profile">
@@ -88,8 +92,7 @@ export class Feed extends Component {
         <div className="feed-comment">
           <ul className="comments">
             <CommentList
-              commentList={commentList}
-              newComment={comment}
+              comment={comment}
               // deleteComment={this.handleDelete}
             />
           </ul>

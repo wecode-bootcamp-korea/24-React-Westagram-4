@@ -34,39 +34,9 @@ export default class MakeAccountJae extends Component {
       });
   };
 
-  handleNameInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, name: value });
-  };
-
-  handlePhoneInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, phone_number: value });
-  };
-
-  handleGenderInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, gender: value });
-  };
-
-  handleAddressInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, address: value });
-  };
-
-  handleBirthInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, birth: value });
-  };
-
-  handleIDInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, email: value });
-  };
-
-  handlePWInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, password: value });
+  handleAccountInput = e => {
+    const { name, value } = e.target;
+    this.setState({ ...this.state, [name]: value });
   };
 
   render() {
@@ -83,55 +53,55 @@ export default class MakeAccountJae extends Component {
               className="userID"
               placeholder="이름"
               aria-label="Write your phonenumber"
-              onChange={this.handleNameInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="tel"
               className="userID"
               placeholder="전화번호 000-000-0000으로 입력해주세요"
               aria-label="Write your phonenumber"
-              onChange={this.handlePhoneInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="text"
               className="userPW"
               placeholder="Male / Female"
               aria-label="Write your gender"
-              onChange={this.handleGenderInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="text"
               className="userPW"
               placeholder="address"
               aria-label="Write your address"
-              onChange={this.handleAddressInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="text"
               className="userPW"
               placeholder="YYYY-MM-DD"
               aria-label="Write your birthday"
-              onChange={this.handleBirthInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="email"
               className="userID"
               placeholder="이메일"
               aria-label="Write account ID"
-              onChange={this.handleIDInput}
+              onChange={this.handleAccountInput}
             />
             <input
               type="password"
               className="userPW"
               placeholder="비밀번호 - 8자 이상, 대문자 및 특수문자를 1자 이상 포함할 것 "
               aria-label="Write accout password"
-              onChange={this.handlePWInput}
+              onChange={this.handleAccountInput}
             />
             <button
               type="button"
               className={this.state.isActive ? "loginBtn active" : "loginBtn"}
               aria-label="login"
-              onClick={this.sendAccount}
+              onClick={this.handleAccountInput}
             >
               회원가입 하기
             </button>

@@ -1,1 +1,200 @@
-//main
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #fafafa;
+  --color-dark-white: #dbdbdb;
+  --color-light-gray: #a4a7aa;
+  --color-dark-gray: #262626;
+  --color-black: #000000;
+  --color-light-blue: #b2dffc;
+  --color-blue: #0095f6;
+  --color-red: #ed4956;
+}
+/* Media query */
+@media screen and (max-width: 960px) {
+  .main-right {
+    display: none;
+  }
+}
+
+.section-main {
+  /* main */
+  .main {
+    display: flex;
+    justify-content: center;
+
+    .feeds {
+      position: relative;
+      width: 630px;
+      margin-top: 100px;
+      background-color: var(--color-white);
+      overflow: hidden;
+
+      .feeds-each {
+        border: 1px solid var(--color-dark-white);
+        border-radius: 3px;
+        margin-bottom: 24px;
+
+        .feeds-image {
+          height: 630px;
+          object-fit: cover;
+        }
+
+        .feeds-profile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+
+          img {
+            width: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--color-dark-white);
+            cursor: pointer;
+          }
+
+          span {
+            position: absolute;
+            font-size: 14px;
+            font-weight: 700;
+            left: 60px;
+            cursor: pointer;
+          }
+
+          .more-icon {
+            cursor: pointer;
+          }
+        }
+
+        .reaction {
+          display: flex;
+          position: relative;
+
+          i {
+            font-size: 26px;
+            margin: 5px 0 5px 10px;
+            color: var(--color-dark-gray);
+            cursor: pointer;
+            &.fas.fa-heart {
+              color: var(--color-red);
+            }
+          }
+
+          .fa-bookmark {
+            position: absolute;
+            right: 15px;
+          }
+        }
+
+        .like {
+          display: flex;
+          margin-left: 10px;
+          align-items: center;
+
+          img {
+            width: 32px;
+            border: 1px solid var(--color-dark-white);
+            border-radius: 50%;
+            cursor: pointer;
+          }
+
+          .many-likes {
+            font-size: 14px;
+            margin-left: 10px;
+
+            span {
+              font-weight: 700;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .feed-description {
+          margin: 10px 0 4px 10px;
+          font-size: 14px;
+
+          .username {
+            font-weight: 700;
+            margin-right: 5px;
+            cursor: pointer;
+          }
+
+          .more {
+            color: var(--color-light-gray);
+            cursor: pointer;
+          }
+        }
+
+        .feed-comment {
+          margin: 0 0 6px 10px;
+          font-size: 14px;
+
+          ul {
+            li {
+              display: flex;
+              margin-bottom: 4px;
+
+              i {
+                position: absolute;
+                right: 40px;
+                font-size: 12px;
+                color: var(--color-light-gray);
+                cursor: pointer;
+                &.fas.fa-heart {
+                  color: var(--color-red);
+                }
+                &.far.fa-trash-alt {
+                  right: 20px;
+                }
+              }
+
+              span {
+                font-weight: 700;
+                margin-right: 5px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+        .post-time {
+          margin: 0 0 4px 10px;
+          font-size: 14px;
+          color: var(--color-light-gray);
+        }
+
+        .write-comments {
+          display: flex;
+          border-top: 1px solid var(--color-dark-white);
+
+          .comment-post {
+            width: 590px;
+            padding: 15px 0 15px 0px;
+            border: none;
+            background: none;
+            text-indent: 10px;
+            &:focus {
+              outline: none;
+            }
+            &::placeholder {
+              color: var(--color-light-gray);
+              font-family: "Noto Sans KR", "Open Sans", sans-serif;
+            }
+          }
+
+          .btn-post {
+            padding: 0;
+            border: none;
+            background: none;
+            color: var(--color-light-blue);
+            cursor: pointer;
+            &.active {
+              color: var(--color-blue);
+            }
+          }
+        }
+      }
+    }
+  }
+}

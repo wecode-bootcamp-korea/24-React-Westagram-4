@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Aside.scss";
+import { storyData } from "./storyData";
+import { recommData } from "./recommData";
 
 class Aside extends Component {
   render() {
@@ -19,34 +21,17 @@ class Aside extends Component {
               <span>모두 보기</span>
             </div>
             <ul className="story-update">
-              <li>
-                <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
-                <div className="story-namebox">
-                  <p className="story-username">ttsone_ss</p>
-                  <p className="story-time">16분 전</p>
-                </div>
-              </li>
-              <li>
-                <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
-                <div className="story-namebox">
-                  <p className="story-username">ttsone_ss</p>
-                  <p className="story-time">1시간 전</p>
-                </div>
-              </li>
-              <li>
-                <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
-                <div className="story-namebox">
-                  <p className="story-username">ttsone_ss</p>
-                  <p className="story-time">3시간 전</p>
-                </div>
-              </li>
-              <li>
-                <img src="/images/taesooKim/tanggu.jpeg" alt="tanggu" />
-                <div className="story-namebox">
-                  <p className="story-username">ttsone_ss</p>
-                  <p className="story-time">20시간 전</p>
-                </div>
-              </li>
+              {storyData.map(el => {
+                return (
+                  <li key={el.id}>
+                    <img src={el.image} alt={el.nickName} />
+                    <div className="story-namebox">
+                      <p className="story-username">{el.userName}</p>
+                      <p className="story-time">{el.updateTime}</p>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="recomms">
@@ -55,30 +40,18 @@ class Aside extends Component {
               <span>모두 보기</span>
             </div>
             <ul className="recomm-list">
-              <li>
-                <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
-                <div className="recomm-namebox">
-                  <p className="recomm-username">orosy.ts</p>
-                  <p className="recomm-others">wecode_bootcamp님 외...</p>
-                </div>
-                <p className="recomm-follow">팔로우</p>
-              </li>
-              <li>
-                <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
-                <div className="recomm-namebox">
-                  <p className="recomm-username">orosy.ts</p>
-                  <p className="recomm-others">회원님을 추천</p>
-                </div>
-                <p className="recomm-follow">팔로우</p>
-              </li>
-              <li>
-                <img src="/images/taesooKim/orosy.jpg" alt="orosy" />
-                <div className="recomm-namebox">
-                  <p className="recomm-username">orosy.ts</p>
-                  <p className="recomm-others">wecode_bootcamp님 외...</p>
-                </div>
-                <p className="recomm-follow">팔로우</p>
-              </li>
+              {recommData.map(el => {
+                return (
+                  <li key={el.id}>
+                    <img src={el.image} alt={el.nickName} />
+                    <div className="recomm-namebox">
+                      <p className="recomm-username">{el.userId}</p>
+                      <p className="recomm-others">{el.recommOthers}</p>
+                    </div>
+                    <p className="recomm-follow">{el.follow}</p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="westa-info">

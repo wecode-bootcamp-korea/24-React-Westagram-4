@@ -3,7 +3,6 @@ import Aside from "../Aside/Aside";
 import Nav from "../../../components/Nav/Nav";
 import FeedList from "./FeedList";
 import "./Main.scss";
-import "../../../styles/common.scss";
 
 class MainTaesoo extends React.Component {
   constructor() {

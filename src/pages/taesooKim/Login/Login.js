@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import "./Login.scss";
-import "../../../styles/common.scss";
 
 class LoginTaeSoo extends React.Component {
   constructor() {
@@ -13,14 +12,8 @@ class LoginTaeSoo extends React.Component {
     };
   }
 
-  activeLogin = () => {
-    this.state.id.indexOf("@") !== -1 && this.state.pw.length >= 5
-      ? this.setState({ disabled: false })
-      : this.setState({ disabled: true });
-  };
-
   handleLogin = () => {
-    fetch("http://10.58.7.180:8000/user/signin", {
+    fetch("http://10.58.6.20:8000/users/signin", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.id,
@@ -32,11 +25,14 @@ class LoginTaeSoo extends React.Component {
   };
 
   handleInput = e => {
-    const { value, id } = e.target;
-    this.setState({
-      [id]: value,
-    });
-    this.activeLogin();
+    const { name, value } = e.target;
+
+    const isActive =
+      this.state.id.indexOf("@") !== -1 && this.state.pw.length >= 5
+        ? this.setState({ disabled: false })
+        : this.setState({ disabled: true });
+
+    this.setState({ [name]: value, isActive });
   };
 
   goToMain = () => {
@@ -47,13 +43,16 @@ class LoginTaeSoo extends React.Component {
 
   render() {
     const { id, pw, disabled } = this.state;
+    const isActive = id.indexOf("@") !== -1 && pw.length >= 5;
+
     return (
       <section className="login">
         <h1 className="title">Westagram</h1>
         <div className="login-container">
-          <div id="login-form">
+          <div className="login-form">
             <input
               id="id"
+              name="id"
               className="username"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -61,15 +60,14 @@ class LoginTaeSoo extends React.Component {
             />
             <input
               id="pw"
+              name="pw"
               className="password"
               type="password"
               placeholder="비밀번호"
               onChange={this.handleInput}
             />
             <button
-              className={`btn ${
-                id.indexOf("@") !== -1 && pw.length >= 5 ? "active" : ""
-              }`}
+              className={`btn ${isActive ? "active" : ""}`}
               disabled={disabled}
               onClick={this.handleLogin}
             >
@@ -77,7 +75,7 @@ class LoginTaeSoo extends React.Component {
             </button>
           </div>
         </div>
-        <p>비밀번호를 잊으셨나요?</p>
+        <p className="forget-password">비밀번호를 잊으셨나요?</p>
       </section>
     );
   }

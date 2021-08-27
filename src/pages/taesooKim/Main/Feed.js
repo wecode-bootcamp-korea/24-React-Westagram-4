@@ -8,13 +8,13 @@ export class Feed extends Component {
     super();
     this.state = {
       value: "",
-      comment: [],
+      comments: [],
       isClicked: false,
     };
   }
 
   componentDidMount() {
-    this.setState({ comment: this.props.commentList });
+    this.setState({ comments: this.props.commentList });
   }
 
   getValue = e => {
@@ -24,25 +24,29 @@ export class Feed extends Component {
   };
 
   handleAdd = e => {
-    if (this.state.value) {
-      e.preventDefault();
-      const newComment = {
-        id: Date.now(),
-        userName: "orosy.ts",
-        content: this.state.value,
-        isUser: true,
-      };
-      const comment = [...this.state.comment, newComment];
-      this.setState({ comment, value: "" });
-    }
+    const { value, comments: prevComments } = this.state;
     e.preventDefault();
+
+    if (!value) return;
+
+    const newComment = {
+      id: Date.now(),
+      userName: "orosy.ts",
+      content: value,
+      isUser: true,
+    };
+
+    const comments = [...prevComments, newComment];
+
+    this.setState({ comments, value: "" });
   };
 
   handleDelete = id => {
-    const filteredComments = this.state.comment.filter(
+    const filteredComments = this.state.comments.filter(
       comment => comment.id !== id
     );
-    this.setState({ comment: filteredComments });
+
+    this.setState({ comments: filteredComments });
   };
 
   handleClick = () => {
@@ -50,8 +54,9 @@ export class Feed extends Component {
   };
 
   render() {
-    const { value, isClicked, comment } = this.state;
-    const { name, profile, description, image, like, update } = this.props;
+    const { value, isClicked, comments } = this.state;
+    const { name, profile, description, image, likes, update } = this.props;
+
     return (
       <div className="feeds-each">
         <div className="feeds-profile">
@@ -75,7 +80,7 @@ export class Feed extends Component {
           </div>
         </div>
         <div>
-          {like.map(like => {
+          {likes.map(like => {
             return (
               <Like
                 key={like.id}
@@ -93,7 +98,7 @@ export class Feed extends Component {
         </div>
         <div className="feed-comment">
           <ul className="comments">
-            <CommentList comment={comment} deleteComment={this.handleDelete} />
+            <CommentList comment={comments} deleteComment={this.handleDelete} />
           </ul>
         </div>
         <p className="post-time">{update}</p>

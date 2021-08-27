@@ -17,26 +17,29 @@
   padding-bottom: 20px;
   border: 1px solid var(--color-dark-white);
   background-color: var(--color-white);
+
   .title {
     display: flex;
     justify-content: center;
-    margin: 40px 0 50px 0;
+    margin: 40px 0 50px;
     font-size: 50px;
     font-family: "Lobster";
   }
+
   .login-container {
     margin-top: 50px;
-    #login-form {
+
+    .login-form {
       input {
         display: block;
         width: 300px;
         padding: 10px;
-        margin: 0 auto;
-        margin-bottom: 5px;
+        margin: 0 auto 5px auto;
         background-color: var(--color-light-white);
         border: 1px solid var(--color-dark-white);
         border-radius: 3px;
       }
+
       input {
         display: block;
         width: 300px;
@@ -48,6 +51,7 @@
         border-radius: 3px;
       }
     }
+
     .btn {
       width: 300px;
       display: block;
@@ -62,13 +66,15 @@
         background-color: var(--color-regular-blue);
         cursor: pointer;
       }
+
       span {
         color: var(--color-white);
         font-size: 14px;
       }
     }
   }
-  p {
+
+  .forget-password {
     display: flex;
     justify-content: center;
     margin-top: 100px;

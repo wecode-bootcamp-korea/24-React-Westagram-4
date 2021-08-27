@@ -17,7 +17,7 @@ export default class CommentForm extends Component {
 
   handleButton = () => {
     const comment = this.inputRef.current.value;
-    this.setState({ isActive: comment.length > 0 ? true : false });
+    this.setState({ isActive: comment.length > 0 });
   };
 
   render() {

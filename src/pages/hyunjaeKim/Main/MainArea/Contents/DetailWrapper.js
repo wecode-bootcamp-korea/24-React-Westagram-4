@@ -18,9 +18,12 @@ export default class DetailWrapper extends Component {
   };
 
   handleIncrement = () => {
-    this.state.isRed === true
-      ? this.setState({ ...this.state, likes: this.state.likes + 1 })
-      : this.setState({ ...this.state, likes: this.state.likes - 1 });
+    const { isRed, likes } = this.state;
+    const sign = { true: 1, false: -1 };
+    this.setState(prev => ({
+      ...prev,
+      likes: likes + sign[isRed],
+    }));
   };
 
   render() {

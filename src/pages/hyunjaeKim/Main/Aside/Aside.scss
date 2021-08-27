@@ -35,7 +35,8 @@
     }
 
     .suggestedProfiles {
-      @include flex-space-between();
+      display: flex;
+      flex-direction: column;
 
       .suggestedProfile {
         @include flex-space-between();

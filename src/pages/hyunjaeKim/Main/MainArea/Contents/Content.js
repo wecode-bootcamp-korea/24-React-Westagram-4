@@ -5,7 +5,7 @@ import MainContents from "./MainContents";
 import DetailWrapper from "./DetailWrapper";
 
 export default class Content extends Component {
-  state = {};
+  state = { id: "", profile: "", userNAme: "", url: "", comments: [] };
 
   componentDidMount() {
     this.setState(this.props.content);
@@ -29,9 +29,7 @@ export default class Content extends Component {
       <article className="content">
         <ContentHeader />
         <MainContents />
-        {this.state.comments && (
-          <DetailWrapper content={this.state} onDelete={this.handleDelete} />
-        )}
+        <DetailWrapper content={this.state} onDelete={this.handleDelete} />
         <CommentForm onSubmit={this.handleAdd} />
       </article>
     );

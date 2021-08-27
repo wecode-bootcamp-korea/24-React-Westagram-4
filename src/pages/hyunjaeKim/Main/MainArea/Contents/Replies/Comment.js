@@ -11,7 +11,9 @@ export default class CommentForm extends Component {
   onSubmit = event => {
     event.preventDefault();
     const comment = this.inputRef.current.value;
-    comment && this.props.onSubmit(comment);
+    if (comment) {
+      this.props.onSubmit(comment);
+    }
     this.formRef.current.reset();
   };
 

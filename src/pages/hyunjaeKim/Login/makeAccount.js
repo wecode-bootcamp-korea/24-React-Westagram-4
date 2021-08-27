@@ -14,10 +14,18 @@ export default class MakeAccountJae extends Component {
   };
 
   sendAccount = () => {
+    const { name, phone_number, gender, address, birth, email, password } =
+      this.state;
     fetch("http://10.58.0.45:8000/users/signup", {
       method: "POST",
       body: JSON.stringify({
-        ...this.state,
+        name,
+        phone_number,
+        gender,
+        address,
+        birth,
+        email,
+        password,
       }),
     })
       .then(res => res.json())

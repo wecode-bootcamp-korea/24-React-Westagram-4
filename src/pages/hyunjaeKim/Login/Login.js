@@ -13,11 +13,11 @@ class LoginHyunJae extends Component {
   };
 
   handleLogin = () => {
+    const { userID, userPW } = this.state;
+
     fetch("http://10.58.0.45:8000/users/login", {
       method: "POST",
-      body: JSON.stringify({
-        ...this.state,
-      }),
+      body: JSON.stringify({ userID, userPW }),
     })
       .then(res => res.json())
       .then(data => {

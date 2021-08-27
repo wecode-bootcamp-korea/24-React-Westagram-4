@@ -4,8 +4,8 @@ import "./Login.scss";
 
 class LoginHyunJae extends Component {
   state = {
-    email: "",
-    password: "",
+    userID: "",
+    userPW: "",
   };
 
   saveData = data => {
@@ -30,14 +30,9 @@ class LoginHyunJae extends Component {
       });
   };
 
-  handleIDInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, email: value });
-  };
-
-  handlePWInput = e => {
-    const { value } = e.target;
-    this.setState({ ...this.state, password: value });
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({ ...this.state, [name]: value });
   };
 
   render() {
@@ -52,18 +47,18 @@ class LoginHyunJae extends Component {
             className="userID"
             placeholder="이메일을 입력해주세요"
             aria-label="Write account ID"
-            onChange={this.handleIDInput}
+            onChange={this.handleInput}
           />
           <input
             type="password"
             className="userPW"
             placeholder="비밀번호"
             aria-label="Write accout password"
-            onChange={this.handlePWInput}
+            onChange={this.handleInput}
           />
           <button
             type="button"
-            className={this.state.isActive ? "loginBtn active" : "loginBtn"}
+            className={`loginBtn ${this.state.isActive ? "active" : ""}`}
             aria-label="login"
             onClick={this.handleLogin}
           >

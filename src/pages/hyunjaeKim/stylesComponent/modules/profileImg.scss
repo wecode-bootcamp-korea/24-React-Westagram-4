@@ -23,6 +23,10 @@
     margin-bottom: 8px;
     background: linear-gradient(to bottom right, #f58529 20%, #c42d91);
   }
+
+  .focus {
+    background-color: #000;
+  }
 }
 
 .profileImg {
@@ -41,9 +45,4 @@
     width: 66px;
     height: 66px;
   }
-}
-
-/*? 이렇게 클래스로 따로 주는게 더 좋은가 */
-.focus {
-  background-color: #000;
 }

@@ -11,13 +11,7 @@ export default class Replies extends Component {
     return (
       <ul>
         {comments.map(reply => (
-          <Reply
-            reply={reply}
-            onDelete={this.handleDelete}
-            userName={reply.userName}
-            comment={reply.comment}
-            key={reply.id}
-          />
+          <Reply reply={reply} onDelete={this.handleDelete} key={reply.id} />
         ))}
       </ul>
     );

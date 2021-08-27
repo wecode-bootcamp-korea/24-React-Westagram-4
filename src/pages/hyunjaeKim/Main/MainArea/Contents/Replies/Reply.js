@@ -14,17 +14,17 @@ export default class Reply extends Component {
   };
 
   render() {
-    const { userName, comment } = this.props;
+    const { reply } = this.props;
     return (
       <li className="reply">
         <div className="replyDetail" onClick={this.onClick}>
           <strong>
             <a href="#" className="userID">
-              {userName}
+              {reply.userName}
             </a>
           </strong>
           <a href="#" className="comment hashtag">
-            {comment}
+            {reply.comment}
           </a>
         </div>
         <div className="icon heartBtn small_icon" onClick={this.handleBtn}>

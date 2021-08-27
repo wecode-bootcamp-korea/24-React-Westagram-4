@@ -1,16 +1,19 @@
-.loginContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 348px;
-  height: 358px;
-  margin-left: -174px;
-  margin-top: -179px;
-  border: 1.5px solid #e6e6e6;
-  background-color: #fff;
-  text-align: center;
-}
+.loginBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
-.userInfo {
-  margin-bottom: 45px;
+  .loginContainer {
+    display: inline-block;
+    border: 1.5px solid #e6e6e6;
+    background-color: #fff;
+    text-align: center;
+
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      margin: 45px;
+    }
+  }
 }

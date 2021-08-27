@@ -37,36 +37,38 @@ class LoginHyunJae extends Component {
 
   render() {
     return (
-      <div className="loginContainer">
-        <h1 className="title" aria-label="Welcome to Westagram">
-          Westagram
-        </h1>
-        <form className="userInfo">
-          <input
-            type="email"
-            className="userID"
-            placeholder="이메일을 입력해주세요"
-            aria-label="Write account ID"
-            onChange={this.handleInput}
-          />
-          <input
-            type="password"
-            className="userPW"
-            placeholder="비밀번호"
-            aria-label="Write accout password"
-            onChange={this.handleInput}
-          />
-          <button
-            type="button"
-            className={`loginBtn ${this.state.isActive ? "active" : ""}`}
-            aria-label="login"
-            onClick={this.handleLogin}
-          >
-            로그인
-          </button>
-        </form>
-        <div className="helpLink" aria-label="help desk">
-          <Link to="/account-jae">계정을 추가해보세요</Link>
+      <div className="loginBody">
+        <div className="loginContainer">
+          <h1 className="title" aria-label="Welcome to Westagram">
+            Westagram
+          </h1>
+          <form className="userInfo">
+            <input
+              type="email"
+              className="userID"
+              placeholder="이메일을 입력해주세요"
+              aria-label="Write account ID"
+              onChange={this.handleInput}
+            />
+            <input
+              type="password"
+              className="userPW"
+              placeholder="비밀번호"
+              aria-label="Write accout password"
+              onChange={this.handleInput}
+            />
+            <button
+              type="button"
+              className={`loginBtn ${this.state.isActive ? "active" : ""}`}
+              aria-label="login"
+              onClick={this.handleLogin}
+            >
+              로그인
+            </button>
+          </form>
+          <div className="helpLink" aria-label="help desk">
+            <Link to="/account-jae">계정을 추가해보세요</Link>
+          </div>
         </div>
       </div>
     );

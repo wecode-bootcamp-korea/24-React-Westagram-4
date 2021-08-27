@@ -7,7 +7,7 @@ export default class Contents extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/commentData.json", {
+    fetch("/data/commentData.json", {
       method: "GET",
     })
       .then(res => res.json())

@@ -20,8 +20,11 @@ export default class Content extends Component {
   };
 
   handleDelete = reply => {
+    const isYou = reply.isUser;
     const comments = this.state.comments.filter(item => item.id !== reply.id);
-    this.setState({ comments });
+    isYou === true
+      ? this.setState({ ...this.state, comments })
+      : alert("본인 작성 외의 댓글은 삭제하실 수 없습니다!");
   };
 
   render() {

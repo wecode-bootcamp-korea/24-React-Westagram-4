@@ -13,10 +13,13 @@ export default class NavMenus extends Component {
   };
 
   render() {
-    console.log(this.state.menus);
     const { menus } = this.state;
+    const { isClicked } = this.props;
     return (
-      <div className="navMenu" aria-label="account menu">
+      <div
+        className={`navMenu ${isClicked ? "" : "disappear"}`}
+        aria-label="account menu"
+      >
         <ul className="menuList" aria-label="menu lists">
           {menus.map(menu => (
             <NavMenu key={menu.id} menu={menu} />

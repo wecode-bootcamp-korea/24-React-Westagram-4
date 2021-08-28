@@ -3,7 +3,16 @@ import NavMenus from "./NavMenus/NavMenus";
 import "./NavIcons.scss";
 
 export default class NavIcons extends Component {
+  state = {
+    isClicked: false,
+  };
+
+  handleClick = () => {
+    this.setState({ isClicked: !this.state.isClicked });
+  };
+
   render() {
+    const { isClicked } = this.state;
     return (
       <div className="icons">
         <a href="./main.html" className="icon homeBtn"></a>
@@ -15,15 +24,19 @@ export default class NavIcons extends Component {
           </svg>
         </span>
         <div className="navProfile">
-          <div className="profileWrapper" id="navProfile">
+          <button
+            className={`profileWrapper ${isClicked ? "focus" : ""}`}
+            id="navProfile"
+            onClick={this.handleClick}
+          >
             <img
               src="/images/hyunjaeKim/myprofile.jpeg"
               alt="profile_image"
               className="profileImg"
             />
-          </div>
+          </button>
         </div>
-        <NavMenus />
+        <NavMenus isClicked={isClicked} />
       </div>
     );
   }

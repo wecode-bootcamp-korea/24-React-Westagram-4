@@ -1,59 +1,70 @@
 {
-  "userArray": [
+  "account": [
     {
       "id": "young93",
       "nickname": "기면재",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "wecode_bootcamp",
       "nickname": ">wecode | 위코드",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "younghyun",
       "nickname": "young hyun kim",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "younghyunkim",
       "nickname": "영현kim입니다",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "yongju0506",
       "nickname": "용주용주",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "yumi_sepo",
       "nickname": " ",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "wecoder_24",
       "nickname": "위코더24기",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "withme",
       "nickname": "나와함께",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "wy___ynd",
       "nickname": "전용준",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "yanggeng88",
       "nickname": "junyong",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     },
     {
       "id": "wnn_99",
       "nickname": "우승💪",
-      "picture": "assets/images/wecode.png"
+      "picture": "/images/hyunjaeKim/wecode.png",
+      "desc": "Hi im Sunny💕"
     }
   ]
 }

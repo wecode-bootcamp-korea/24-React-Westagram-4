@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import SearchBox from "./SearchBox/SearchBox";
-import NavIcons from "../NavIcons/NavIcons";
+import NavIcons from "./NavIcons/NavIcons";
 import "./Nav.scss";
 
 export default class Nav extends Component {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import NavMenu from "./NavMenu/NavMenu";
+import NavMenus from "./NavMenus/NavMenus";
+import "./NavIcons.scss";
 
 export default class NavIcons extends Component {
   render() {
@@ -22,7 +23,7 @@ export default class NavIcons extends Component {
             />
           </div>
         </div>
-        <NavMenu />
+        <NavMenus />
       </div>
     );
   }

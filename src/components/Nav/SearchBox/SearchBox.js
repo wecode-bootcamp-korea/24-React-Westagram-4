@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SerachResult from "./SerachReesult/SerachResults";
+import SerachResults from "./SerachReesult/SerachResults";
 
 export default class SearchBox extends Component {
   state = {
@@ -17,9 +17,7 @@ export default class SearchBox extends Component {
 
   handleSearchInput = e => {
     const input = e.target.value;
-    if (input.length > 0) {
-      this.setState({ ...this.state, userInput: input });
-    }
+    this.setState({ ...this.state, userInput: input });
   };
 
   render() {
@@ -34,17 +32,13 @@ export default class SearchBox extends Component {
           <input
             type="text"
             className="searchInput"
-            placeholder="Search"
             onChange={this.handleSearchInput}
+            placeholder="Search..."
           />
-          <div className="searchPlaceholder">
-            <span className="searchIcon">
-              <i className="fas fa-search"></i>
-            </span>
-            <span className="placeHolderText">Search</span>
-          </div>
         </form>
-        <SerachResult accounts={accounts} matchedValue={matchedValue} />
+        <div>
+          <SerachResults matchedValue={matchedValue} userInput={userInput} />
+        </div>
       </div>
     );
   }

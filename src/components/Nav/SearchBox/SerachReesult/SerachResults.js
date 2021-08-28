@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import SearchResult from "./SearchResult";
 
-export default class SerachResult extends Component {
+export default class SerachResults extends Component {
   render() {
-    const { matchedValue } = this.props;
+    const { matchedValue, userInput } = this.props;
     return (
       <div className="searchResultContainer">
         <div className="searchWrapper">
-          <div className="searchComponent">
+          <div
+            className={`searchComponent ${
+              !userInput || userInput.length < 0 ? "disappear" : ""
+            }`}
+          >
             {matchedValue.map((user, idx) => (
               <SearchResult key={idx} user={user} />
             ))}

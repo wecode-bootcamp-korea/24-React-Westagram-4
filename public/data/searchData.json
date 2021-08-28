@@ -1,0 +1,59 @@
+{
+  "userArray": [
+    {
+      "id": "young93",
+      "nickname": "기면재",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "wecode_bootcamp",
+      "nickname": ">wecode | 위코드",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "younghyun",
+      "nickname": "young hyun kim",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "younghyunkim",
+      "nickname": "영현kim입니다",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "yongju0506",
+      "nickname": "용주용주",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "yumi_sepo",
+      "nickname": " ",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "wecoder_24",
+      "nickname": "위코더24기",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "withme",
+      "nickname": "나와함께",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "wy___ynd",
+      "nickname": "전용준",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "yanggeng88",
+      "nickname": "junyong",
+      "picture": "assets/images/wecode.png"
+    },
+    {
+      "id": "wnn_99",
+      "nickname": "우승💪",
+      "picture": "assets/images/wecode.png"
+    }
+  ]
+}

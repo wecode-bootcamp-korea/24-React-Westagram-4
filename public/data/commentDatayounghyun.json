@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "profile": "/images/cheoljinJu/food.jpeg",
+    "userName": "CheoljinJu",
+    "url": "/images/cheoljinJu/food.jpeg",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "eel.j",
+        "comment": "🖤",
+        "isUser": false
+      },
+      {
+        "id": 2,
+        "userName": "hyun_jae",
+        "comment": "오히려 좋아~~~",
+        "isUser": false
+      },
+      {
+        "id": 3,
+        "userName": "dongdong",
+        "comment": "킵고잉킵고잉💪",
+        "isUser": false
+      },
+      {
+        "id": 4,
+        "userName": "muhyun0902",
+        "comment": "저 인사 안하고 집에 갈거예요.",
+        "isUser": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "profile": "/images/cheoljinJu/food.jpeg",
+    "userName": "CheoljinJu",
+    "url": "/images/cheoljinJu/food.jpeg",
+    "comments": [
+      {
+        "id": 1,
+        "userName": "sungwhans1223",
+        "comment": "퍼가요~❤️",
+        "isUser": false
+      },
+      {
+        "id": 2,
+        "userName": "0hyun0hyun",
+        "comment": "감사합니다 또 한 번 감사합니다..",
+        "isUser": false
+      },
+      {
+        "id": 3,
+        "userName": "il__saejun123",
+        "comment": "자전거 타고 싶습니다!",
+        "isUser": false
+      },
+      {
+        "id": 4,
+        "userName": "yeonu___",
+        "comment": "킥오프 기다리셨죠?",
+        "isUser": false
+      }
+    ]
+  }
+]

@@ -1,1 +1,22 @@
-//main
+body {
+  background-color: #fafafa;
+
+  .main {
+    .margin-value {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin: 100px 240px;
+      z-index: 2;
+
+      .feeds-align {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .fas {
+    color: #ed4956;
+  }
+}

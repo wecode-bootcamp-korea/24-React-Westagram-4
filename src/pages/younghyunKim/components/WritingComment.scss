@@ -1,0 +1,15 @@
+.writingComment {
+  display: inline-block;
+  width: 575px;
+  margin-top: 3px;
+
+  .comment-id {
+    font-size: 14.5px;
+    font-weight: bold;
+  }
+
+  .comment-writing {
+    margin-left: 5px;
+    width: 200px;
+  }
+}

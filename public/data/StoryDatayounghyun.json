@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "profileImg": "images/younghyunKim/jenny.jpeg",
+    "userID": "jenny0305",
+    "userName": "hi im jenny💙"
+  },
+  {
+    "id": 2,
+    "profileImg": "images/younghyunKim/woziin.jpeg",
+    "userID": "wooziin",
+    "userName": "안경박사 우진👓"
+  },
+  {
+    "id": 3,
+    "profileImg": "images/younghyunKim/go.jpeg",
+    "userID": "gomikyo",
+    "userName": "miko"
+  },
+  {
+    "id": 4,
+    "profileImg": "images/younghyunKim/local.jpeg",
+    "userID": "lockalkim",
+    "userName": "현지인 입니다."
+  }
+]

@@ -23,12 +23,7 @@
 }
 
 /* writter comment */
-.writterComment {
-  display: inline-block;
-  max-width: 530px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.wirtterCommentWrapper {
   margin-bottom: 4px;
 }
 
@@ -36,6 +31,10 @@
 .userComments .moreLink {
   display: block;
   margin-bottom: 4px;
+}
+
+.comment {
+  display: inline-block;
 }
 
 .reply {

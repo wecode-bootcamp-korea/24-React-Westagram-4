@@ -23,9 +23,13 @@ export default class Reply extends Component {
               {reply.userName}
             </a>
           </strong>
-          <a href="#" className="comment hashtag">
+          <span
+            className={`writterComment ${
+              reply.comment.includes("@") ? "hashtag" : ""
+            }`}
+          >
             {reply.comment}
-          </a>
+          </span>
         </div>
         <div className="icon heartBtn small_icon" onClick={this.handleBtn}>
           <i

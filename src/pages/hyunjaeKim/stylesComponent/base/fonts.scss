@@ -32,39 +32,6 @@
   color: #01376a;
   cursor: pointer;
 }
-.writterCommentContainer {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-
-  .writterCommentWrapper {
-    max-width: 440px;
-    display: inline-block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-
-    &.open {
-      max-width: 100%;
-      text-overflow: "";
-      overflow: visible;
-      white-space: normal;
-    }
-  }
-
-  .moreLink {
-    display: inline;
-    padding: 0;
-    font-size: 14px;
-    line-height: 18px;
-    color: rgb(142, 142, 142);
-    cursor: pointer;
-
-    &.open {
-      display: none;
-    }
-  }
-}
 
 .writterComment {
   font-size: 14px;

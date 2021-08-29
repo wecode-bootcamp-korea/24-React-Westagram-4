@@ -7,11 +7,12 @@ class WritingComment extends Component {
   };
 
   render() {
-    const { username, comment } = this.props;
+    const { content } = this.props;
+    const { userName, comment } = content;
     return (
       <div className="feeds-comment">
-        <div className="commentDiv">
-          <span className="comment-id">{username}</span>
+        <div className="writingComment">
+          <span className="comment-id">{userName}</span>
           <span className="comment-writing">{comment}</span>
         </div>
         <button onClick={this.handleDelete}>

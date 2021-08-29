@@ -1,7 +1,7 @@
-.commentDiv {
+.writingComment {
+  display: inline-block;
   width: 575px;
   margin-top: 3px;
-  display: inline-block;
 
   .comment-id {
     font-size: 14.5px;
@@ -11,15 +11,5 @@
   .comment-writing {
     margin-left: 5px;
     width: 200px;
-  }
-
-  img {
-    width: 22px;
-    border: 0.5px solid #dbdbdb;
-    border-radius: 50%;
-  }
-
-  span {
-    font-size: 14.5px;
   }
 }

@@ -10,7 +10,7 @@ class MainYoungHyun extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3000/data/commentDatayounghyun.json", {
+    fetch("/data/commentDatayounghyun.json", {
       method: "GET",
     })
       .then(res => res.json())

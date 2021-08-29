@@ -1,6 +1,4 @@
 .main-right {
-  display: flex;
-  flex-direction: column;
   position: fixed;
   margin-bottom: 30px;
   top: 100px;
@@ -9,18 +7,9 @@
   height: 500px;
   z-index: 1;
 
-  .story {
-    height: 300px;
-    margin-bottom: 10px;
-    border: 1px solid #dbdbdb;
-    border-radius: 2px;
-    background-color: white;
-    overflow: auto;
-  }
-
   .recommend {
-    background-color: white;
     height: 200px;
+    background-color: white;
     border: 1px solid #dbdbdb;
     border-radius: 2px;
     overflow: auto;
@@ -37,7 +26,6 @@
 
   .user {
     display: flex;
-    flex-direction: row;
     align-items: center;
     margin-bottom: 15px;
 
@@ -47,35 +35,41 @@
       border-radius: 50%;
     }
 
-    div {
+    .user-idname {
       margin-left: 10px;
-    }
 
-    .user-id {
-      font-size: 15px;
-      font-weight: bold;
-    }
+      .user-id {
+        font-size: 15px;
+        font-weight: bold;
+      }
 
-    .user-name {
-      font-size: 13px;
-      color: #8e8e8e;
-      margin-top: 3px;
+      .user-name {
+        margin-top: 3px;
+        color: #8e8e8e;
+        font-size: 13px;
+      }
     }
   }
 
   .story {
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    background-color: white;
+    overflow: auto;
+
     .story-title {
+      position: fixed;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      position: fixed;
       width: 278px;
       padding: 10px 15px;
-      font-size: 14px;
-      font-weight: bold;
       color: #262626;
       background-color: #fff;
       opacity: 0.9;
+      font-size: 14px;
+      font-weight: bold;
 
       span:first-child {
         font-size: 14px;
@@ -84,16 +78,18 @@
     }
 
     .story-down {
-      display: flex;
-      flex-direction: column;
-      margin-top: 40px;
-      margin-bottom: 15px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+
+      &:first-child {
+        margin-top: 40px;
+      }
 
       .story-contents {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin: 0 13px 5px;
+        margin: 0 13px 0px;
 
         .gradient {
           display: flex;
@@ -107,28 +103,29 @@
             #f58529 20%,
             #c42d91
           );
-        }
 
-        img {
-          width: 36px;
-          height: 36px;
-          border: 2px solid #fff;
-          border-radius: 100%;
+          img {
+            width: 36px;
+            height: 36px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+          }
         }
+        .user-gradient {
+          p {
+            margin-left: 7px;
+          }
 
-        p {
-          margin-left: 7px;
-        }
+          .user-id {
+            font-size: 15px;
+            font-weight: bold;
+          }
 
-        .user-id {
-          font-size: 15px;
-          font-weight: bold;
-        }
-
-        .user-name {
-          font-size: 13px;
-          color: #8e8e8e;
-          margin-top: 3px;
+          .user-name {
+            margin-top: 3px;
+            color: #8e8e8e;
+            font-size: 13px;
+          }
         }
       }
     }
@@ -136,17 +133,17 @@
 
   .recommend {
     .recommend-title {
+      position: fixed;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      position: fixed;
       width: 278px;
       padding: 10px 15px;
-      font-size: 14px;
-      font-weight: bold;
       color: #262626;
       background-color: #fff;
       opacity: 0.9;
+      font-size: 14px;
+      font-weight: bold;
 
       span:first-child {
         font-size: 14px;
@@ -157,9 +154,9 @@
     .recommend-down {
       display: flex;
       flex-direction: column;
+      bottom: 40px;
       margin-top: 40px;
       margin-bottom: 15px;
-      bottom: 40px;
 
       .recommend-contents {
         display: flex;
@@ -192,8 +189,8 @@
 
         .user-name {
           margin-top: 3px;
-          font-size: 13px;
           color: #8e8e8e;
+          font-size: 13px;
         }
       }
     }

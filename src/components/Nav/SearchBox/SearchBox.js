@@ -7,13 +7,13 @@ export default class SearchBox extends Component {
     userInput: "",
   };
 
-  componentDidUpdate() {
+  handleSearchBox = () => {
     fetch("/data/searchData.json", {
       method: "GET",
     })
       .then(res => res.json())
       .then(accounts => this.setState({ accounts: accounts.account }));
-  }
+  };
 
   handleSearchInput = e => {
     const input = e.target.value;
@@ -33,6 +33,7 @@ export default class SearchBox extends Component {
             type="text"
             className="searchInput"
             onChange={this.handleSearchInput}
+            onFocus={this.handleSearchBox}
             placeholder="Search..."
           />
         </form>

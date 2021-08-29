@@ -8,14 +8,22 @@
     top: 40%;
     left: 560px;
   }
-}
 
-.stories {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 16px 10px;
-  overflow: hidden;
+  .content-box {
+    overflow-x: hidden;
+  }
+
+  .stories {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px 10px;
+    transition: all 200ms ease-in-out;
+
+    &.move {
+      transform: translateX(-50px);
+    }
+  }
 }
 
 .story {

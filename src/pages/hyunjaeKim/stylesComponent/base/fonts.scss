@@ -82,8 +82,12 @@
 
 /* story ID */
 .storyID {
+  max-width: 66px;
   font-size: 12px;
   line-height: 14px;
   text-align: center;
   color: #262626;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

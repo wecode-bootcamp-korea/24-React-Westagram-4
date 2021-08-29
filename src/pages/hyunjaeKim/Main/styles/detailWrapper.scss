@@ -24,6 +24,11 @@
 
 /* writter comment */
 .writterComment {
+  display: inline-block;
+  max-width: 530px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin-bottom: 4px;
 }
 

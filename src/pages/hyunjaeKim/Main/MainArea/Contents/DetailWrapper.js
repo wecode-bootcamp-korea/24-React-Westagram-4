@@ -54,7 +54,10 @@ export default class DetailWrapper extends Component {
               </a>
             </strong>
             <span className="comment">
-              마지막 팀 갤럭시...
+              동메달보다 금메달보다 어떤 메달과 상보다 더 값진 감동을 선물해줘서
+              너무너무 고마워요 덕분에 전국민이 국뽕 한 사발 들이키고 목 터져라
+              김연경 울부짖었던 행복했던 올림픽이었어요 절대절대 자책하지말고
+              푸욱 쉬어요💙
               <span className="moreLink">more</span>
             </span>
           </div>

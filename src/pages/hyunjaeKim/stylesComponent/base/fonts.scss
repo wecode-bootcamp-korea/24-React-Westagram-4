@@ -1,0 +1,90 @@
+/****************** Fonts ******************/
+/* title */
+.title {
+  font-size: 25px;
+}
+
+/* login page title */
+.loginContainer .title {
+  margin-top: 45px;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+
+/* userID */
+.userID {
+  font-size: 14px;
+  color: #262626;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.userInfo .userID,
+.userPW {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* forgot Password */
+.helpLink {
+  font-size: 12px;
+  margin-bottom: 40px;
+  color: #01376a;
+  cursor: pointer;
+}
+
+.writterComment {
+  font-size: 14px;
+  color: rgb(38, 38, 38);
+}
+
+.moreLink {
+  color: rgb(142, 142, 142);
+  cursor: pointer;
+}
+
+/* hashtag */
+.hashtag {
+  color: #01376a;
+}
+
+/* pastDay */
+.pastDay {
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  line-height: 18px;
+  color: rgb(142, 142, 142);
+}
+
+/* suggestHeader */
+.suggestHeader {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(142, 142, 142);
+}
+
+/* profileDesc */
+.profileDesc {
+  font-size: 12px;
+  line-height: 14px;
+  color: rgb(142, 142, 142);
+}
+
+/* serviceLinks */
+.serviceLinks {
+  font-size: 11px;
+  line-height: 13px;
+  color: rgb(199, 199, 199);
+}
+
+/* story ID */
+.storyID {
+  max-width: 66px;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #262626;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

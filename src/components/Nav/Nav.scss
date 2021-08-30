@@ -1,55 +1,70 @@
-.Nav {
-  display: flex;
-  position: fixed;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 67px;
-  background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
-  z-index: 4;
-
-  .instagram-logo {
+nav {
+  .navHeader {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 240px;
-    font-size: 22px;
-
-    .instagram-icon {
-      border-left: 2px solid #262626;
-      padding-left: 12px;
-      margin-left: 13px;
-      font-family: Lobster;
-    }
-  }
-  .search {
-    > input {
-      width: 200px;
-      height: 22px;
-      border: 1.7px solid #dbdbdb;
-      border-radius: 2px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: lighter;
-    }
-
-    > input:focus {
-      padding-left: 22px;
-      color: #262626;
-      text-align: left;
-    }
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 935px;
+    height: 54px;
+    margin: 0 auto;
   }
 
   .icons {
-    margin-right: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    img {
-      width: 25px;
-      height: 25px;
-      margin-left: 15px;
+    .icon {
+      margin-left: 22px;
     }
+  }
+
+  .searchResultContainer {
+    position: absolute;
+    top: 50px;
+    left: 25%;
+    box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+    border-radius: 5px;
+    z-index: 10;
+  }
+
+  .searchComponent {
+    position: relative;
+    max-height: 350px;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: auto;
+    z-index: 1;
+  }
+
+  .searchResultBox {
+    width: 375px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #fff;
+
+    .profileWrapper {
+      margin-right: 12px;
+    }
+  }
+
+  .searchDetail {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+  }
+
+  .search-squre {
+    position: absolute;
+    top: -7px;
+    left: 185px;
+    width: 16px;
+    height: 16px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 5px 1px rgba(var(--jb7, 0, 0, 0), 0.0975);
+    background-color: #fff;
+    z-index: -1;
   }
 }

@@ -1,0 +1,47 @@
+/************** layouts ****************/
+/* contianer */
+.containerCenter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.mainArea {
+  margin-right: 30px;
+}
+
+.storyFeed {
+  margin-bottom: 25px;
+}
+
+/* contents - layout */
+.contents {
+  width: 600px;
+  margin-bottom: 30px;
+}
+
+.detailWrapper.content-box {
+  padding: 8px 16px;
+  border-bottom: none;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+/* sideBar */
+.sideBar {
+  width: 293px;
+}
+
+.suggestions {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+  .sideBar {
+    display: none;
+  }
+}

@@ -1,1 +1,16 @@
-//main
+/* base */
+@import "/src/pages/hyunjaeKim/stylesComponent/base/custom.scss";
+@import "/src/pages/hyunjaeKim/stylesComponent/base/fonts.scss";
+@import "/src/pages/hyunjaeKim/stylesComponent/base/layouts.scss";
+
+/* modules */
+@import "/src/pages/hyunjaeKim/stylesComponent/modules/forms.scss";
+@import "/src/pages/hyunjaeKim/stylesComponent/modules/buttons.scss";
+@import "/src/pages/hyunjaeKim/stylesComponent/modules/profileImg.scss";
+
+/* components */
+@import "./styles/commentForm.scss";
+@import "./styles/contentHeader.scss";
+@import "./styles/detailWrapper.scss";
+@import "./styles/mainContents.scss";
+@import "./styles/storyFeed.scss";

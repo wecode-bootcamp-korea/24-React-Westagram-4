@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 /* Hyunjae */
 import LoginHyunJae from "./pages/hyunjaeKim/Login/Login";
+// import MakeAccountJae from "./pages/hyunjaeKim/Login/makeAccount";
 import MainHyunJae from "./pages/hyunjaeKim/Main/Main";
 
 /* Taesoo */
@@ -19,6 +20,7 @@ class Routes extends Component {
       <Router>
         <Switch>
           <Route exact path="/login-jae" component={LoginHyunJae} />
+          {/* <Route exact path="/account-jae" component={MakeAccountJae} /> */}
           <Route exact path="/main-jae" component={MainHyunJae} />
           <Route exact path="/login-soo" component={LoginTaeSoo} />
           <Route exact path="/main-soo" component={MainTaeSoo} />

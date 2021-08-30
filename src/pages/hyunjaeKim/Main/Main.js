@@ -1,8 +1,20 @@
 import React, { Component } from "react";
+import Nav from "../../../components/Nav/Nav";
+import Aside from "./Aside/Aside";
+import MainArea from "./MainArea/MainArea";
+import "./Main.scss";
 
 class MainHyunJae extends Component {
   render() {
-    return <div>안녕하세요?</div>;
+    return (
+      <>
+        <Nav />
+        <div className="containerCenter">
+          <MainArea />
+          <Aside />
+        </div>
+      </>
+    );
   }
 }
 

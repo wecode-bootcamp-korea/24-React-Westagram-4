@@ -18,11 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 16px 10px;
-    transition: all 200ms ease-in-out;
-
-    &.move {
-      transform: translateX(-50px);
-    }
+    transition: all 400ms ease-in-out;
   }
 }
 
